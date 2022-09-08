@@ -5,7 +5,24 @@ body {
 }
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 /* Font utilizada para títulos*/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+
+$azul-com-baixa-saturacao: #4b6584;
+$azul-claro: #2d98da;
+$azul-escuro: #3867d6;
+
+.fundo-azul-com-baixa-saturacao {
+  background-color: $azul-com-baixa-saturacao !important;
+}
+
+.fundo-azul-claro {
+  background-color: $azul-claro !important;
+}
+
+.fundo-azul-escuro {
+  background-color: $azul-escuro !important;
+}
+
