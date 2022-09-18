@@ -1,14 +1,14 @@
 <div class="header" [ngClass]="isStateInUpdateState() ? 'fundo-azul-claro' : 'fundo-azul-com-baixa-saturacao'">
   <div *ngIf="isStateInHomeState()" class="w-100 h-100 p-3 d-flex justify-content-between align-items-center">
     <span class="header-name">{{nomeUsuario}}</span>
-    <img height="35" width="35" src="../../assets/icons/logout-icon.png" (click)="performAction()">
+    <img height="35" width="35" src="../../assets/icons/logout-icon.png">
   </div>
   <div *ngIf="isStateInFeatureState()" class="w-100 h-100 p-3 d-flex justify-content-between align-items-center">
-    <img height="35" width="35" src="../../assets/icons/back-icon.png" (click)="performAction()">
+    <img height="35" width="35" src="../../assets/icons/back-icon.png" (click)="voltarPagina()">
     <span class="header-name">{{nomeUsuario}}</span>
   </div>
   <div *ngIf="isStateInUpdateState()" class="w-100 h-100 p-3 d-flex justify-content-between align-items-center">
-    <img height="35" width="35" src="../../assets/icons/back-icon.png" (click)="performAction()">
+    <img height="35" width="35" src="../../assets/icons/back-icon.png" (click)="voltarPagina()">
     <span class="header-name">{{nomeUsuario}}</span>
   </div>
 </div>
