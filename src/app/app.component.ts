@@ -1,5 +1,7 @@
+import { FooterService } from './footer/service/footer.service';
+import { FooterComponent } from './footer/footer.component';
 import { HeaderAction } from './header/domain/header-action';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'gestao-de-ponto-eletronico';
+
+  public rodapeVisivel: boolean = true;
+
+  constructor(footerService: FooterService){
+
+    footerService.buscarObservableDeVisibilidade().subscribe(estado => this.rodapeVisivel = estado);
+
+  }
+
+
 }

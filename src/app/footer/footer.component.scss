@@ -1,9 +1,16 @@
 
 $altura-barra: 120px;
 
-.footer {
+.visivel {
   height: $altura-barra;
-  width: 100%;
+  visibility: visible;
+  display: block;
+}
+
+.invisivel {
+  height: 1px;
+  visibility: hidden;
+  display: none;
 }
 
 .divisor {

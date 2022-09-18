@@ -1,8 +1,8 @@
 import { FooterSectionController } from './footer-section-controller';
 import { FooterSectionMenu } from './footer-section-menu';
 import { FooterButton } from './footer-button';
+import { Router } from '@angular/router';
 export class FooterSection implements FooterSectionController {
-
   private botaoHome: FooterButton;
   private botaoFuncionarios: FooterButton;
   private botaoMarcacoes: FooterButton;
@@ -27,20 +27,47 @@ export class FooterSection implements FooterSectionController {
     }
   }
 
-  public changeFooterSelectedMenuTo(menu: FooterSectionMenu): void {
+  public changeFooterSelectedMenuStatusToEnable(menu: FooterSectionMenu): void {
 
     this.generateArrayOfButtons()
-      .filter(button => menu !== button.type)
-      .forEach(button => button.enabled = false);
+      .filter((button) => menu !== button.type)
+      .forEach((button) => (button.enabled = false));
 
-    this.generateArrayOfButtons()
-      .filter(button => button.type === menu)
-      [0].enabled = true;
+    this.generateArrayOfButtons().filter(
+      (button) => button.type === menu
+    )[0].enabled = true;
 
   }
 
-  private generateArrayOfButtons() : Array<FooterButton> {
-    return [this.botaoHome, this.botaoFuncionarios, this.botaoMarcacoes, this.botaoRelatorios];
+  public changeFooterSelectedMenuTo(
+    menu: FooterSectionMenu,
+    router: Router
+  ): void {
+
+    this.changeFooterSelectedMenuStatusToEnable(menu);
+
+    switch (menu) {
+      case FooterSectionMenu.HOME:
+        router.navigate(['/inicio'])
+        break;
+      case FooterSectionMenu.WORKER:
+        router.navigate(['/funcionarios'])
+        break;
+      case FooterSectionMenu.CLOCK:
+        router.navigate(['/marcacoes'])
+        break;
+      case FooterSectionMenu.REPORT:
+        router.navigate(['/relatorios'])
+        break;
+    }
   }
 
+  private generateArrayOfButtons(): Array<FooterButton> {
+    return [
+      this.botaoHome,
+      this.botaoFuncionarios,
+      this.botaoMarcacoes,
+      this.botaoRelatorios,
+    ];
+  }
 }
