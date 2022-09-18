@@ -4,11 +4,11 @@
     <img height="35" width="35" src="../../assets/icons/logout-icon.png">
   </div>
   <div *ngIf="isStateInFeatureState()" class="w-100 h-100 p-3 d-flex justify-content-between align-items-center">
-    <img height="35" width="35" src="../../assets/icons/back-icon.png" (click)="voltarPagina()">
+    <img height="35" width="35" src="../../assets/icons/back-icon.png" class="pointer" (click)="voltarPagina()">
     <span class="header-name">{{nomeUsuario}}</span>
   </div>
   <div *ngIf="isStateInUpdateState()" class="w-100 h-100 p-3 d-flex justify-content-between align-items-center">
-    <img height="35" width="35" src="../../assets/icons/back-icon.png" (click)="voltarPagina()">
+    <img height="35" width="35" src="../../assets/icons/back-icon.png" class="pointer" (click)="voltarPagina()">
     <span class="header-name">{{nomeUsuario}}</span>
   </div>
 </div>
