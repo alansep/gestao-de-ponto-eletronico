@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 mb-4">
+      <app-input-with-label label="Digite o nome do funcionario" (aoDigitar)="buscarFuncionarioPorNome($event)"></app-input-with-label>
+    </div>
+    <hr>
+    <div class="col-12 col-sm-6 col-md-4" *ngFor="let funcionario of funcionarios">
+      <div class="w-100 card-funcionario mt-2 mb-2 cor-azul-escuro" (click)="selecionarFuncionario(funcionario)">
+        {{funcionario.nome}}
+      </div>
+    </div>
+  </div>
+</div>

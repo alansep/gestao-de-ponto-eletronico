@@ -2,27 +2,20 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { InputWithLabelComponent } from './input-with-label/input-with-label.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { BodyComponent } from './body/body.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardCardComponent,
-    InputWithLabelComponent,
     HeaderComponent,
-    FooterComponent,
-    BodyComponent
+    FooterComponent
   ],
-  imports: [
-    BrowserModule,
-    NgbModule
-  ],
+  imports: [BrowserModule, NgbModule, AppRoutingModule, RouterModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
