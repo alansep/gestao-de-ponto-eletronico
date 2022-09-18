@@ -21,9 +21,6 @@ export class HeaderComponent implements OnInit {
   @Input()
   public nomeUsuario = '';
 
-  @Output()
-  public aoSelecionarBotao = new EventEmitter<HeaderAction>();
-
   constructor(
     private router: Router,
     private route: ActivatedRoute,

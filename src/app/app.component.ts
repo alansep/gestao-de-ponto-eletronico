@@ -1,21 +1,30 @@
+import { HeaderService } from './header/service/header.service';
 import { FooterService } from './footer/service/footer.service';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderAction } from './header/domain/header-action';
-import { Component, ViewChild } from '@angular/core';
+import { AfterContentInit, Component, OnInit, ViewChild } from '@angular/core';
+import { HeaderState } from './header/domain/header-state';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   public rodapeVisivel: boolean = true;
 
-  constructor(footerService: FooterService){
+  constructor(private headerService: HeaderService){
+  }
 
-    footerService.buscarObservableDeVisibilidade().subscribe(estado => this.rodapeVisivel = estado);
-
+  ngOnInit(): void {
+    this.headerService.buscarObservableDeEstadoAtualizacao().subscribe(result => {
+      if(result !== HeaderState.HOME_STATE){
+        this.rodapeVisivel = false;
+      } else {
+        this.rodapeVisivel = true;
+      }
+    });
   }
 
 
