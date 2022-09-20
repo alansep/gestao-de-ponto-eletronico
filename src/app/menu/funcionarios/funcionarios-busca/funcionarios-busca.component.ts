@@ -14,7 +14,7 @@ import { HeaderState } from 'src/app/header/domain/header-state';
 export class FuncionariosBuscaComponent implements OnInit {
   public funcionarios: Array<Funcionario> = [];
 
-  constructor(private service: FuncionariosService, private headerService: HeaderService, private footerService: FooterService) {}
+  constructor(private service: FuncionariosService, private headerService: HeaderService, private footerService: FooterService, private router: Router) {}
 
   ngOnInit(): void {
     this.buscarFuncionarios();
@@ -38,6 +38,6 @@ export class FuncionariosBuscaComponent implements OnInit {
   }
 
   public selecionarFuncionario(funcionario: Funcionario): void {
-    this.headerService.navegar(['funcionarios', 'busca', funcionario.id.toString()]);
+    this.router.navigate(['funcionarios', 'busca', funcionario.id.toString()]);
   }
 }

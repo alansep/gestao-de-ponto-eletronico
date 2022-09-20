@@ -12,10 +12,6 @@ export class HeaderService {
 
   constructor(private router: Router) { }
 
-  public navegar(rota: string[]): void {
-    this.router.navigate(rota);
-  }
-
   public definirEstado(estado: HeaderState): void {
     this.observableDeEstado.next(estado);
   }
@@ -23,6 +19,5 @@ export class HeaderService {
   public buscarObservableDeEstadoAtualizacao(): Observable<HeaderState> {
     return this.observableDeEstado;
   }
-
 
 }

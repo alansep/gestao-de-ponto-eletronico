@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FuncionariosComponent implements OnInit {
 
-  constructor(private headerService: HeaderService, private footerService: FooterService) { }
+  constructor(private headerService: HeaderService, private footerService: FooterService, private router: Router) { }
 
   ngOnInit(): void {
     this.headerService.definirEstado(HeaderState.HOME_STATE);
@@ -19,7 +19,7 @@ export class FuncionariosComponent implements OnInit {
   }
 
   abrirTelaDeBusca(): void {
-    this.headerService.navegar(['funcionarios', 'busca']);
+    this.router.navigate(['funcionarios', 'busca']);
   }
 
 }
