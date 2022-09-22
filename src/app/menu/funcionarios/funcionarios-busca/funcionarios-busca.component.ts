@@ -1,10 +1,9 @@
-import { FooterService } from './../../../footer/service/footer.service';
-import { HeaderService } from './../../../header/service/header.service';
-import { Router } from '@angular/router';
-import { FuncionariosService } from './../service/funcionarios.service';
 import { Component, OnInit } from '@angular/core';
-import { Funcionario } from '../domain/funcionario';
+import { Router } from '@angular/router';
 import { HeaderState } from 'src/app/header/domain/header-state';
+import { Funcionario } from '../domain/funcionario';
+import { ScreenHandlerService } from './../../../screen-handler/services/screen-handler.service';
+import { FuncionariosService } from './../service/funcionarios.service';
 
 @Component({
   selector: 'app-funcionarios-busca',
@@ -14,12 +13,12 @@ import { HeaderState } from 'src/app/header/domain/header-state';
 export class FuncionariosBuscaComponent implements OnInit {
   public funcionarios: Array<Funcionario> = [];
 
-  constructor(private service: FuncionariosService, private headerService: HeaderService, private footerService: FooterService, private router: Router) {}
+  constructor(private service: FuncionariosService, private screenHandlerService: ScreenHandlerService, private router: Router) {}
 
   ngOnInit(): void {
     this.buscarFuncionarios();
-    this.headerService.definirEstado(HeaderState.FEATURE_STATE);
-    this.footerService.definirVisibilidadeComo(false);
+    this.screenHandlerService.setHeaderStateAs(HeaderState.FEATURE_STATE);
+    this.screenHandlerService.setFooterVisibilityAs(false);
 
   }
 

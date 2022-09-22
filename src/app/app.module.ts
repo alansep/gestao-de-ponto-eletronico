@@ -1,3 +1,4 @@
+import { ScreenHandlerModule } from './screen-handler/screen-handler.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,7 +15,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     FooterComponent
   ],
-  imports: [BrowserModule, NgbModule, AppRoutingModule, RouterModule],
+  imports: [BrowserModule, NgbModule, AppRoutingModule, RouterModule, ScreenHandlerModule],
   providers: [],
   bootstrap: [AppComponent],
 })

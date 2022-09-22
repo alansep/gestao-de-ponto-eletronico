@@ -1,3 +1,7 @@
-.router-height {
+.router-height-with-footer {
   height: calc(100vh - 205px);
+}
+
+.router-height-without-footer {
+  height: calc(100vh - 53px);
 }

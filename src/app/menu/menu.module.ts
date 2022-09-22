@@ -1,3 +1,4 @@
+import { ScreenHandlerModule } from './../screen-handler/screen-handler.module';
 import { FuncionariosService } from './funcionarios/service/funcionarios.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -23,7 +24,8 @@ import { FuncionarioDetalhadoComponent } from './funcionarios/funcionario-detalh
   imports: [
     CommonModule,
     HttpClientModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    ScreenHandlerModule
   ],
   exports: [
     InicioComponent,

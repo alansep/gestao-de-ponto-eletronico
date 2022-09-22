@@ -11,7 +11,6 @@ import { ActivationStart, Router } from '@angular/router';
 })
 export class FooterComponent implements OnInit {
   private footerSection: FooterSection;
-  public isVisible: boolean = true;
 
   constructor(private router: Router, private footerService: FooterService) {
     this.footerSection = new FooterSection();
@@ -36,16 +35,6 @@ export class FooterComponent implements OnInit {
             break;
         }
       }
-
-      this.footerService
-        .buscarObservableDeVisibilidade()
-        .subscribe((result) => {
-          if(result) {
-            this.setFooterAsVisible();
-          } else {
-            this.setFooterAsInvisible();
-          }
-        });
     });
   }
 
@@ -60,17 +49,4 @@ export class FooterComponent implements OnInit {
   public getSelectedMenu(): FooterSectionMenu {
     return this.footerSection.getSelectedMenu();
   }
-
-  public setFooterAsVisible(): void {
-    if(!this.isVisible){
-      this.isVisible = true;
-    }
-  }
-
-  public setFooterAsInvisible(): void {
-    if(this.isVisible){
-      this.isVisible = false;
-    }
-  }
-
 }

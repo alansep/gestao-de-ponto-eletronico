@@ -1,13 +1,9 @@
+import { ScreenHandlerService } from './../screen-handler/services/screen-handler.service';
 import { HeaderService } from './service/header.service';
 import { HeaderAction } from './domain/header-action';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { HeaderState } from './domain/header-state';
-import {
-  Router,
-  ActivatedRoute,
-  ActivationStart,
-  UrlSegment,
-} from '@angular/router';
+import { Router, ActivatedRoute, ActivationStart } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -24,17 +20,17 @@ export class HeaderComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private headerService: HeaderService
+    private screenHandlerService: ScreenHandlerService
   ) {
-    headerService.buscarObservableDeEstadoAtualizacao().subscribe((result) => {
-      this.state = result;
-    });
+    screenHandlerService.headerStateObservable.subscribe(
+      (result) => (this.state = result)
+    );
   }
 
   ngOnInit(): void {
     this.router.events.subscribe((data) => {
       if (data instanceof ActivationStart) {
-        this.url = data.snapshot.url.map(path => path.path);
+        this.url = data.snapshot.url.map((path) => path.path);
       }
     });
   }
@@ -61,17 +57,6 @@ export class HeaderComponent implements OnInit {
 
   public changeToFeatureState(): void {
     this.state = HeaderState.FEATURE_STATE;
-  }
-
-  private getActionByState(state: HeaderState): HeaderAction {
-    switch (this.state) {
-      case HeaderState.HOME_STATE:
-        return HeaderAction.LOGOUT;
-      case HeaderState.FEATURE_STATE:
-        return HeaderAction.BACK;
-      case HeaderState.UPDATE_STATE:
-        return HeaderAction.CANCEL_UPDATE;
-    }
   }
 
   public voltarPagina(): void {

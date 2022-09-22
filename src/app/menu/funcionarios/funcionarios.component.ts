@@ -1,8 +1,7 @@
-import { FooterService } from './../../footer/service/footer.service';
-import { HeaderState } from './../../header/domain/header-state';
-import { HeaderService } from './../../header/service/header.service';
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HeaderState } from './../../header/domain/header-state';
+import { ScreenHandlerService } from './../../screen-handler/services/screen-handler.service';
 
 @Component({
   selector: 'app-funcionarios',
@@ -11,11 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FuncionariosComponent implements OnInit {
 
-  constructor(private headerService: HeaderService, private footerService: FooterService, private router: Router) { }
+  constructor(private screenHandlerService: ScreenHandlerService, private router: Router) { }
 
   ngOnInit(): void {
-    this.headerService.definirEstado(HeaderState.HOME_STATE);
-    this.footerService.definirVisibilidadeComo(true);
+    this.screenHandlerService.setFooterVisibilityAs(true);
+    this.screenHandlerService.setHeaderStateAs(HeaderState.HOME_STATE);
   }
 
   abrirTelaDeBusca(): void {
