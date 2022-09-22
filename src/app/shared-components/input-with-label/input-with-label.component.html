@@ -1,5 +1,5 @@
 <div class="d-flex flex-column">
   <span class="fw-bolder label-font-size">{{label}}</span>
   <div class="mb-1"></div>
-  <input class="form-control input-with-label p-2" [placeholder]="placeholder" [(ngModel)]="conteudo" (keydown)="emitirEventoDeDigitacao($event)">
+  <input class="form-control input-with-label p-2" [placeholder]="placeholder" [(ngModel)]="content" (keydown)="emitTypingEvent($event)">
 </div>

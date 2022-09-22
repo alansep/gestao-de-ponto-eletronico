@@ -2,22 +2,18 @@ import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FooterService {
+  private footerStateObservable: Subject<boolean> = new Subject();
 
-  private observableDeEstado: Subject<boolean> = new Subject();
+  constructor() {}
 
-  constructor() { }
-
-  public definirVisibilidadeComo(fatorDeVisibilidade: boolean): void {
-    this.observableDeEstado.next(fatorDeVisibilidade);
+  public setVisibilityAs(fatorDeVisibilidade: boolean): void {
+    this.footerStateObservable.next(fatorDeVisibilidade);
   }
 
   public buscarObservableDeVisibilidade(): Observable<boolean> {
-    return this.observableDeEstado;
+    return this.footerStateObservable;
   }
-
-
-
 }

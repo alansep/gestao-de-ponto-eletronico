@@ -1,6 +1,6 @@
+import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { HeaderState } from './../../header/domain/header-state';
-import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',

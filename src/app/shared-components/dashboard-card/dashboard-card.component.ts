@@ -3,25 +3,22 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-dashboard-card',
   templateUrl: './dashboard-card.component.html',
-  styleUrls: ['./dashboard-card.component.scss']
+  styleUrls: ['./dashboard-card.component.scss'],
 })
 export class DashboardCardComponent implements OnInit {
+  @Input()
+  public title: string = 'title';
 
   @Input()
-  public titulo: string = 'título';
+  public value: string = '20';
 
   @Input()
-  public valor: string = '20';
+  public titleColor: string = '#000';
 
   @Input()
-  public corTitulo: string = '#000';
+  public valueColor: string = '#000';
 
-  @Input()
-  public corValor: string = '#000';
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

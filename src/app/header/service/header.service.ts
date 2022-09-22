@@ -1,23 +1,20 @@
-import { Router } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { HeaderState } from '../domain/header-state';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HeaderService {
+  private headerStateObservable: Subject<HeaderState> = new Subject();
 
-  private observableDeEstado: Subject<HeaderState> = new Subject();
+  constructor() {}
 
-  constructor(private router: Router) { }
-
-  public definirEstado(estado: HeaderState): void {
-    this.observableDeEstado.next(estado);
+  public setHeaderStateAs(estado: HeaderState): void {
+    this.headerStateObservable.next(estado);
   }
 
-  public buscarObservableDeEstadoAtualizacao(): Observable<HeaderState> {
-    return this.observableDeEstado;
+  public getHeaderStateObservable(): Observable<HeaderState> {
+    return this.headerStateObservable;
   }
-
 }

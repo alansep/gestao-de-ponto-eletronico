@@ -1,6 +1,6 @@
-import { firstValueFrom, Observable } from 'rxjs';
-import { Funcionario } from '../domain/funcionario';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Worker } from '../domain/funcionario';
 import { FuncionariosClient } from './funcionarios-client.service';
 
 @Injectable({
@@ -9,8 +9,7 @@ import { FuncionariosClient } from './funcionarios-client.service';
 export class FuncionariosService {
   constructor(private client: FuncionariosClient) {}
 
-  public buscarFuncionarios(): Observable<Array<Funcionario>> {
-    return this.client.buscarFuncionarios();
+  public getWorkers(): Observable<Array<Worker>> {
+    return this.client.getWorkers();
   }
-
 }

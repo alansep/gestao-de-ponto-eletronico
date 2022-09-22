@@ -1,8 +1,7 @@
-import { FooterService } from './service/footer.service';
-import { FooterSectionMenu } from './domain/footer-section-menu';
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { FooterSection } from './domain/footer-section';
+import { Component, OnInit } from '@angular/core';
 import { ActivationStart, Router } from '@angular/router';
+import { FooterSection } from './domain/footer-section';
+import { FooterSectionMenu } from './domain/footer-section-menu';
 
 @Component({
   selector: 'app-footer',
@@ -12,15 +11,15 @@ import { ActivationStart, Router } from '@angular/router';
 export class FooterComponent implements OnInit {
   private footerSection: FooterSection;
 
-  constructor(private router: Router, private footerService: FooterService) {
+  constructor(private router: Router) {
     this.footerSection = new FooterSection();
   }
 
   ngOnInit(): void {
     this.router.events.subscribe((data) => {
       if (data instanceof ActivationStart) {
-        let caminhoPai: string = data.snapshot.url.map((path) => path.path)[0];
-        switch (caminhoPai) {
+        let rootPath: string = data.snapshot.url.map((path) => path.path)[0];
+        switch (rootPath) {
           case 'inicio':
             this.selectMenuAsEnabled(FooterSectionMenu.HOME);
             break;

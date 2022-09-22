@@ -1,9 +1,7 @@
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, ActivationStart, Router } from '@angular/router';
 import { ScreenHandlerService } from './../screen-handler/services/screen-handler.service';
-import { HeaderService } from './service/header.service';
-import { HeaderAction } from './domain/header-action';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { HeaderState } from './domain/header-state';
-import { Router, ActivatedRoute, ActivationStart } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,19 +9,18 @@ import { Router, ActivatedRoute, ActivationStart } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  private state: HeaderState = HeaderState.HOME_STATE;
+  private headerState: HeaderState = HeaderState.HOME_STATE;
   private url: Array<string> = [];
 
   @Input()
-  public nomeUsuario = '';
+  public userName = '';
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private screenHandlerService: ScreenHandlerService
   ) {
-    screenHandlerService.headerStateObservable.subscribe(
-      (result) => (this.state = result)
+    this.screenHandlerService.headerStateObservable.subscribe(
+      (result) => (this.headerState = result)
     );
   }
 
@@ -36,32 +33,20 @@ export class HeaderComponent implements OnInit {
   }
 
   public isStateInHomeState(): boolean {
-    return this.state === HeaderState.HOME_STATE;
+    return this.headerState === HeaderState.HOME_STATE;
   }
 
   public isStateInUpdateState(): boolean {
-    return this.state === HeaderState.UPDATE_STATE;
+    return this.headerState === HeaderState.UPDATE_STATE;
   }
 
   public isStateInFeatureState(): boolean {
-    return this.state === HeaderState.FEATURE_STATE;
+    return this.headerState === HeaderState.FEATURE_STATE;
   }
 
-  public changeToHomeState(): void {
-    this.state = HeaderState.HOME_STATE;
-  }
-
-  public changeToUpdateState(): void {
-    this.state = HeaderState.UPDATE_STATE;
-  }
-
-  public changeToFeatureState(): void {
-    this.state = HeaderState.FEATURE_STATE;
-  }
-
-  public voltarPagina(): void {
-    let rotaMae = this.url;
-    rotaMae.pop();
-    this.router.navigate(rotaMae);
+  public backToPreviousPage(): void {
+    let rootPath = this.url;
+    rootPath.pop();
+    this.router.navigate(rootPath);
   }
 }

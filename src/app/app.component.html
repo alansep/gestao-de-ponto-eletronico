@@ -1,5 +1,5 @@
 <div class="d-flex flex-column justify-content-between vh-100">
-  <app-header nomeUsuario="Gabriel Alan" *ngIf="isHeaderVisible">
+  <app-header userName="Gabriel Alan" *ngIf="isHeaderVisible">
   </app-header>
   <div [class.router-height-with-footer]="isHeaderVisible && isFooterVisible" [class.router-height-without-footer]="isHeaderVisible && !isFooterVisible">
       <router-outlet></router-outlet>

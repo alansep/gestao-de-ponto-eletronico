@@ -1,8 +1,8 @@
-import { NgModule, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InputWithLabelComponent } from './input-with-label/input-with-label.component';
-import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
+import { InputWithLabelComponent } from './input-with-label/input-with-label.component';
 
 @NgModule({
   declarations: [DashboardCardComponent, InputWithLabelComponent],

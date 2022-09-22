@@ -1,30 +1,30 @@
-export class Funcionario {
+export class Worker {
   private _id: number;
 
-  private _nome: string;
+  private _name: string;
 
-  private _departamento: string;
+  private _department: string;
 
-  private _turno: string;
+  private _workShift: string;
 
-  private _telefone: string;
+  private _phone: string;
 
-  private _email: string;
+  private _emailAddress: string;
 
   constructor(
     id: number,
-    nome: string,
-    departamento: string,
-    turno: string,
-    telefone: string,
-    email: string
+    name: string,
+    department: string,
+    workShift: string,
+    phone: string,
+    emailAdress: string
   ) {
     this._id = id;
-    this._nome = nome;
-    this._departamento = departamento;
-    this._turno = turno;
-    this._telefone = telefone;
-    this._email = email;
+    this._name = name;
+    this._department = department;
+    this._workShift = workShift;
+    this._phone = phone;
+    this._emailAddress = emailAdress;
   }
 
   public get id(): number {
@@ -34,38 +34,38 @@ export class Funcionario {
     this._id = value;
   }
 
-  public get email(): string {
-    return this._email;
+  public get emailAddress(): string {
+    return this._emailAddress;
   }
-  public set email(value: string) {
-    this._email = value;
-  }
-
-  public get telefone(): string {
-    return this._telefone;
-  }
-  public set telefone(value: string) {
-    this._telefone = value;
+  public set emailAddress(value: string) {
+    this._emailAddress = value;
   }
 
-  public get turno(): string {
-    return this._turno;
+  public get phone(): string {
+    return this._phone;
   }
-  public set turno(value: string) {
-    this._turno = value;
-  }
-
-  public get departamento(): string {
-    return this._departamento;
-  }
-  public set departamento(value: string) {
-    this._departamento = value;
+  public set phone(value: string) {
+    this._phone = value;
   }
 
-  public get nome(): string {
-    return this._nome;
+  public get workShift(): string {
+    return this._workShift;
   }
-  public set nome(value: string) {
-    this._nome = value;
+  public set workShift(value: string) {
+    this._workShift = value;
+  }
+
+  public get department(): string {
+    return this._department;
+  }
+  public set department(value: string) {
+    this._department = value;
+  }
+
+  public get name(): string {
+    return this._name;
+  }
+  public set name(value: string) {
+    this._name = value;
   }
 }

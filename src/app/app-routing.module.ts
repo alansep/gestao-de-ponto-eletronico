@@ -1,13 +1,13 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { FuncionarioDetalhadoComponent } from './menu/funcionarios/funcionario-detalhado/funcionario-detalhado.component';
 import { FuncionariosBuscaComponent } from './menu/funcionarios/funcionarios-busca/funcionarios-busca.component';
-import { RelatoriosComponent } from './menu/relatorios/relatorios.component';
-import { MarcacoesComponent } from './menu/marcacoes/marcacoes.component';
 import { FuncionariosComponent } from './menu/funcionarios/funcionarios.component';
 import { InicioComponent } from './menu/inicio/inicio.component';
-import { RouterModule, Routes } from '@angular/router';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { MarcacoesComponent } from './menu/marcacoes/marcacoes.component';
 import { MenuModule } from './menu/menu.module';
+import { RelatoriosComponent } from './menu/relatorios/relatorios.component';
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },

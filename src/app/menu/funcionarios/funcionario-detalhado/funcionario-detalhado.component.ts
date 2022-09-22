@@ -1,10 +1,10 @@
-import { FooterService } from './../../../footer/service/footer.service';
-import { HeaderService } from './../../../header/service/header.service';
-import { Funcionario } from './../domain/funcionario';
-import { FuncionariosService } from './../service/funcionarios.service';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HeaderState } from 'src/app/header/domain/header-state';
+import { FooterService } from './../../../footer/service/footer.service';
+import { HeaderService } from './../../../header/service/header.service';
+import { Worker } from './../domain/funcionario';
+import { FuncionariosService } from './../service/funcionarios.service';
 
 @Component({
   selector: 'app-funcionario-detalhado',
@@ -19,22 +19,18 @@ export class FuncionarioDetalhadoComponent implements OnInit {
     private footerService: FooterService
   ) {}
 
-  public funcionario: Funcionario = new Funcionario(-1, '', '', '', '', '');
+  public worker: Worker = new Worker(-1, '', '', '', '', '');
 
   ngOnInit(): void {
-    this.headerService.definirEstado(HeaderState.UPDATE_STATE);
-    this.footerService.definirVisibilidadeComo(false);
-
+    this.headerService.setHeaderStateAs(HeaderState.UPDATE_STATE);
+    this.footerService.setVisibilityAs(false);
 
     this.route.paramMap.subscribe((params) => {
-
-      this.service.buscarFuncionarios().subscribe((result) => {
-        this.funcionario = result.filter(
+      this.service.getWorkers().subscribe((result) => {
+        this.worker = result.filter(
           (funcionario) => funcionario.id === Number(params.get('id'))
         )[0];
       });
-
     });
   }
-
 }

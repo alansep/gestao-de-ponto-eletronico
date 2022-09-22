@@ -1,25 +1,24 @@
-import { HeaderState } from "./header-state";
+import { HeaderState } from './header-state';
 
 export class HeaderPath {
+  private _path: Array<string>;
+  private _headerState: HeaderState;
 
-  private _caminho: Array<string>;
-  private _estadoDeCabecalho: HeaderState;
-
-  constructor (caminho: Array<string>, estadoDeCabecalho: HeaderState) {
-    this._caminho = caminho;
-    this._estadoDeCabecalho = estadoDeCabecalho;
+  constructor(path: Array<string>, headerState: HeaderState) {
+    this._path = path;
+    this._headerState = headerState;
   }
 
-  public get caminho(): Array<string> {
-    return this._caminho;
+  public get path(): Array<string> {
+    return this._path;
   }
-  public set caminho(value: Array<string>) {
-    this._caminho = value;
+  public set path(value: Array<string>) {
+    this._path = value;
   }
-  public get estadoDeCabecalho(): HeaderState {
-    return this._estadoDeCabecalho;
+  public get headerState(): HeaderState {
+    return this._headerState;
   }
-  public set estadoDeCabecalho(value: HeaderState) {
-    this._estadoDeCabecalho = value;
+  public set headerState(value: HeaderState) {
+    this._headerState = value;
   }
 }

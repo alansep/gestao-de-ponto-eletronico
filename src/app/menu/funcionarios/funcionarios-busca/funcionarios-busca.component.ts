@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderState } from 'src/app/header/domain/header-state';
-import { Funcionario } from '../domain/funcionario';
+import { Worker } from '../domain/funcionario';
 import { ScreenHandlerService } from './../../../screen-handler/services/screen-handler.service';
 import { FuncionariosService } from './../service/funcionarios.service';
 
@@ -11,32 +11,41 @@ import { FuncionariosService } from './../service/funcionarios.service';
   styleUrls: ['./funcionarios-busca.component.scss'],
 })
 export class FuncionariosBuscaComponent implements OnInit {
-  public funcionarios: Array<Funcionario> = [];
+  public workers: Array<Worker> = [];
 
-  constructor(private service: FuncionariosService, private screenHandlerService: ScreenHandlerService, private router: Router) {}
+  constructor(
+    private service: FuncionariosService,
+    private screenHandlerService: ScreenHandlerService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.buscarFuncionarios();
+    this.getWorkers();
     this.screenHandlerService.setHeaderStateAs(HeaderState.FEATURE_STATE);
     this.screenHandlerService.setFooterVisibilityAs(false);
-
   }
 
-  public buscarFuncionarios(): void {
-    this.service.buscarFuncionarios().subscribe((result) => {
-      this.funcionarios = result.sort((funcionarioA, funcionarioB) => funcionarioA.nome.localeCompare(funcionarioB.nome));
+  public getWorkers(): void {
+    this.service.getWorkers().subscribe((result) => {
+      this.workers = result.sort((firstWorker, secondWorker) =>
+        firstWorker.name.localeCompare(secondWorker.name)
+      );
     });
   }
 
-  public buscarFuncionarioPorNome(nome: string): void {
-    this.service.buscarFuncionarios().subscribe((result) => {
-      this.funcionarios = result.filter((funcionario) =>
-        funcionario.nome.toUpperCase().includes(nome.toLocaleUpperCase())
-      ).sort((funcionarioA, funcionarioB) => funcionarioA.nome.localeCompare(funcionarioB.nome));
+  public findWorkerByName(name: string): void {
+    this.service.getWorkers().subscribe((result) => {
+      this.workers = result
+        .filter((worker) =>
+          worker.name.toUpperCase().includes(name.toLocaleUpperCase())
+        )
+        .sort((firstWorker, secondWorker) =>
+          firstWorker.name.localeCompare(secondWorker.name)
+        );
     });
   }
 
-  public selecionarFuncionario(funcionario: Funcionario): void {
-    this.router.navigate(['funcionarios', 'busca', funcionario.id.toString()]);
+  public selectWorker(worker: Worker): void {
+    this.router.navigate(['funcionarios', 'busca', worker.id.toString()]);
   }
 }
