@@ -4,7 +4,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
-import { ScreenHandlerService } from './screen-handler/services/screen-handler.service';
+import { ScreenHandlerService } from './shared-services/screen-handler/services/screen-handler.service';
 
 @Component({
   selector: 'app-root',

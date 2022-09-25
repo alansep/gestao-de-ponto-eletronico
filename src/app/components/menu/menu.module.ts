@@ -1,4 +1,3 @@
-import { ScreenHandlerModule } from './../screen-handler/screen-handler.module';
 import { FuncionariosService } from './funcionarios/service/funcionarios.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FuncionariosClient } from './funcionarios/service/funcionarios-client.service';
 import { SharedComponentsModule } from './../shared-components/shared-components.module';
 import { FuncionarioDetalhadoComponent } from './funcionarios/funcionario-detalhado/funcionario-detalhado.component';
+import { ScreenHandlerModule } from 'src/app/shared-services/screen-handler/screen-handler.module';
 
 @NgModule({
   declarations: [

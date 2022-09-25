@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivationStart, Router } from '@angular/router';
-import { ScreenHandlerService } from './../screen-handler/services/screen-handler.service';
+import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/services/screen-handler.service';
 import { HeaderState } from './domain/header-state';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/services/screen-handler.service';
 import { HeaderState } from './../../header/domain/header-state';
-import { ScreenHandlerService } from './../../screen-handler/services/screen-handler.service';
 
 @Component({
   selector: 'app-funcionarios',

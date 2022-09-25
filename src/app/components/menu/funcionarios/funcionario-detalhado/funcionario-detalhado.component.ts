@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HeaderState } from 'src/app/header/domain/header-state';
+import { HeaderState } from 'src/app/components/header/domain/header-state';
 import { FooterService } from './../../../footer/service/footer.service';
 import { HeaderService } from './../../../header/service/header.service';
 import { Worker } from './../domain/funcionario';

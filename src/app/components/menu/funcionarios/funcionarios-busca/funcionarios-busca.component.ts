@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HeaderState } from 'src/app/header/domain/header-state';
+import { HeaderState } from 'src/app/components/header/domain/header-state';
+import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/services/screen-handler.service';
 import { Worker } from '../domain/funcionario';
-import { ScreenHandlerService } from './../../../screen-handler/services/screen-handler.service';
 import { FuncionariosService } from './../service/funcionarios.service';
 
 @Component({
