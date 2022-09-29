@@ -1,3 +1,5 @@
+import { ApplicationRoutes } from './../../../shared-services/application-routes';
+import { Router } from '@angular/router';
 import { RouteAuthGuardService } from './../../../shared-services/route-auth-guard.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent implements OnInit {
-  constructor(private routeAuthGuardService: RouteAuthGuardService) {}
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.routeAuthGuardService.authenticateUser();
-    console.log(this.routeAuthGuardService.isUserAuthenticated());
   }
+
+  public navigateToSignInPage(): void {
+    this.router.navigate([ApplicationRoutes.SIGN_IN]);
+  }
+
+
+  public navigateToSignUpPage(): void {
+    this.router.navigate([ApplicationRoutes.SIGN_UP]);
+  }
+
 }
