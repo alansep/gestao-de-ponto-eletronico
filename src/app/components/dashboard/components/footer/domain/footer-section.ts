@@ -1,3 +1,4 @@
+import { ApplicationRoutes } from './../../../../../shared-services/application-routes';
 import { FooterSectionController } from './footer-section-controller';
 import { FooterSectionMenu } from './footer-section-menu';
 import { FooterButton } from './footer-button';
@@ -45,16 +46,16 @@ export class FooterSection implements FooterSectionController {
 
     switch (menu) {
       case FooterSectionMenu.HOME:
-        router.navigate(['/inicio']);
+        router.navigate([ApplicationRoutes.DASHBOARD, ApplicationRoutes.INICIO]);
         break;
       case FooterSectionMenu.WORKER:
-        router.navigate(['/funcionarios']);
+        router.navigate([ApplicationRoutes.DASHBOARD, ApplicationRoutes.FUNCIONARIOS]);
         break;
       case FooterSectionMenu.CLOCK:
-        router.navigate(['/marcacoes']);
+        router.navigate([ApplicationRoutes.DASHBOARD, ApplicationRoutes.MARCACOES]);
         break;
       case FooterSectionMenu.REPORT:
-        router.navigate(['/relatorios']);
+        router.navigate([ApplicationRoutes.DASHBOARD, ApplicationRoutes.RELATORIOS]);
         break;
     }
   }

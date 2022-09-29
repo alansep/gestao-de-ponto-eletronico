@@ -8,16 +8,15 @@ import { WebStorageWriter } from './web-storage-writer';
 })
 export class WebStorageService implements WebStorageReader, WebStorageWriter {
 
-  constructor(private storage: Storage) {
-    storage = window.localStorage;
+  constructor() {
   }
 
   public readFromWebStorage(key: string): string {
-    const value = this.storage.getItem(key);
+    const value = localStorage.getItem(key);
     return value ? value : '';
   }
 
   public saveOnWebStorage(key: string, content: string): void {
-    this.storage.setItem(key, content);
+    localStorage.setItem(key, content);
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { HeaderState } from 'src/app/components/header/domain/header-state';
+import { HeaderState } from 'src/app/components/dashboard/components/header/domain/header-state';
 
 @Injectable({
   providedIn: 'root',

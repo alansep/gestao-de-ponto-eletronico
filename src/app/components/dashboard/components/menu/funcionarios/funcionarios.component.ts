@@ -1,3 +1,4 @@
+import { ApplicationRoutes } from './../../../../../shared-services/application-routes';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/services/screen-handler.service';
@@ -20,6 +21,6 @@ export class FuncionariosComponent implements OnInit {
   }
 
   public goToWorkerSearchPage(): void {
-    this.router.navigate(['funcionarios', 'busca']);
+    this.router.navigateByUrl(ApplicationRoutes.FUNCIONARIOS_BUSCA);
   }
 }
