@@ -13,7 +13,7 @@ body {
 $azul-com-baixa-saturacao: #4b6584;
 $azul-claro: #2d98da;
 $azul-escuro: #3867d6;
-
+$verde: #20bf6b;
 
 .fundo-azul-com-baixa-saturacao {
   background-color: $azul-com-baixa-saturacao !important;
@@ -25,6 +25,10 @@ $azul-escuro: #3867d6;
 
 .fundo-azul-escuro {
   background-color: $azul-escuro !important;
+}
+
+.fundo-verde {
+  background-color: $verde !important;
 }
 
 .cor-azul-com-baixa-saturacao {
