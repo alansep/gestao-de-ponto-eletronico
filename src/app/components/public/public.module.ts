@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -14,6 +15,6 @@ import { CommonModule } from '@angular/common';
     SignUpComponent,
     WelcomeComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
 })
 export class PublicModule {}

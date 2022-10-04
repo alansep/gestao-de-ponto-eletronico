@@ -1,3 +1,4 @@
+import { RouteAuthGuardService } from './../../../../shared-services/route-auth-guard.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivationStart, Router } from '@angular/router';
 import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/services/screen-handler.service';
@@ -17,7 +18,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private screenHandlerService: ScreenHandlerService
+    private screenHandlerService: ScreenHandlerService,
+    private routeAuthGuardService: RouteAuthGuardService
   ) {
     this.screenHandlerService.headerStateObservable.subscribe(
       (result) => (this.headerState = result)
@@ -48,5 +50,10 @@ export class HeaderComponent implements OnInit {
     let rootPath = this.url;
     rootPath.pop();
     this.router.navigate(rootPath);
+  }
+
+  public backToWelcomePage(): void {
+    this.routeAuthGuardService.logout();
+    this.router.navigate([''])
   }
 }

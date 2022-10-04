@@ -8,19 +8,34 @@
       <b class="text-white">Gestão de Ponto Eletrônico</b>
     </div>
 
-    <div class="d-flex flex-column align-items-center custom-input-width">
-      <div class="w-100">
-        <input class="form-control mt-4" placeholder="Usuário de Acesso">
-        <input class="form-control mt-4" placeholder="Senha de Acesso">
+    <form #signInForm="ngForm" (ngSubmit)="authenticateUser()">
+      <div class="d-flex flex-column align-items-center custom-input-width">
+        <div class="w-100">
+          <div class="d-flex flex-column">
+            <span class="failure" *ngIf="username.dirty && username.invalid">Usuário inválido</span>
+            <span *ngIf="username.pristine || (user.username.length == 0)">Somente letras, números e
+              pontos são permitidos.</span>
+          </div>
+          <input class="form-control mb-4" placeholder="Usuário de Acesso" placeholder="Usuário de Acesso" id="username" name="username"
+          [(ngModel)]="user.username" #username="ngModel" pattern="[a-zA-Z0-9\.]{1,10}" required>
+          <div class="d-flex flex-column">
+            <span class="failure" *ngIf="password.dirty && password.invalid">Senha inválida</span>
+            <span *ngIf="password.pristine || (user.password.length == 0)">Somente letras e números são
+              permitidos.</span>
+          </div>
+          <input class="form-control mb-4" placeholder="Senha de Acesso" type="password" placeholder="Senha de Acesso" id="password" name="password"
+          [(ngModel)]="user.password" #password="ngModel" pattern="[a-zA-Z0-9]{1,10}" required>
+        </div>
+        <div class="w-100">
+          <button type="submit" class="btn btn-outline-light w-100 mt-4" [disabled]="!signInForm.form.valid">Acessar</button>
+        </div>
       </div>
-      <div class="w-100">
-        <button class="btn btn-outline-light w-100 mt-4">Acessar</button>
-      </div>
-    </div>
+    </form>
 
   </div>
 
 
 </div>
 
-<img src="../../../../assets/icons/back-icon.png" width="45px" style="position: fixed; top: 20px; left: 15px" (click)="navegarParaHome()">
+<img src="../../../../assets/icons/back-icon.png" width="45px" style="position: fixed; top: 20px; left: 15px"
+  (click)="goToWelcomePage()">

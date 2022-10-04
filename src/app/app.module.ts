@@ -7,15 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    NgbModule,
-    AppRoutingModule,
-    RouterModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, NgbModule, AppRoutingModule, RouterModule],
   providers: [Storage],
   bootstrap: [AppComponent],
 })

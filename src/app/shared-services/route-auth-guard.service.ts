@@ -1,3 +1,4 @@
+import { UsersService } from './users.service';
 import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
@@ -14,7 +15,8 @@ import { WebStorageService } from './web-storage/web-storage.service';
 export class RouteAuthGuardService implements CanActivate {
   constructor(
     private webStorageService: WebStorageService,
-    private router: Router
+    private router: Router,
+    private usersService: UsersService
   ) {}
 
   canActivate(): boolean {
@@ -33,17 +35,25 @@ export class RouteAuthGuardService implements CanActivate {
       return false;
     }
 
-    console.log(userJson);
-
     const user: User = JSON.parse(userJson);
 
     return user.isAuthenticated;
   }
 
-  public authenticateUser(): void {
-    this.webStorageService.saveOnWebStorage(
-      'user',
-      JSON.stringify(new User('admin', 'admin'))
-    );
+  public getUser(): User {
+    return JSON.parse(this.webStorageService.readFromWebStorage('user'));
+  }
+
+  public authenticateUser(user: User): boolean {
+    if (this.usersService.authenticateUser(user.username, user.password)) {
+      user.name = this.usersService.getUsers().filter(foundUser => foundUser.username === user.username)[0].name;
+      this.webStorageService.saveOnWebStorage('user', JSON.stringify(user));
+      return true;
+    }
+    return false;
+  }
+
+  public logout(): void {
+    this.webStorageService.saveOnWebStorage('user', '');
   }
 }
