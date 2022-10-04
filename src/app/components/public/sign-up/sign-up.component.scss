@@ -1,0 +1,35 @@
+@media (max-width: 576px) {
+  .custom-input-width {
+    width: 90vw;
+  }
+}
+
+@media (min-width: 576px) {
+  .custom-input-width {
+    width: 50vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-input-width {
+    width: 60vw;
+  }
+}
+
+@media (min-width: 992px) {
+  .custom-input-width {
+    width: 470px;
+  }
+}
+
+
+
+
+span {
+  color: white;
+}
+
+.failure {
+  color: rgb(165, 2, 2);
+  font-weight: bolder;
+}

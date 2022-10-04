@@ -1,0 +1,48 @@
+<div class="vw-100 vh-100 py-5 fundo-verde">
+
+  <div
+    class="h-100 pt-5 d-flex flex-column align-items-center justify-content-between flex-md-row justify-content-md-around">
+
+    <div class="d-flex flex-column align-items-center">
+      <img src="../../../../assets/icons/logo.png" width="100px">
+      <b class="text-white">Gestão de Ponto Eletrônico</b>
+    </div>
+
+    <form #signUpForm="ngForm" (ngSubmit)="createUser()">
+      <div class="h-50 d-flex flex-column align-items-center justify-content-between custom-input-width">
+        <div class="w-100">
+          <div class="d-flex flex-column">
+            <span class="failure" *ngIf="name.dirty && name.invalid">Nome inválido</span>
+            <span *ngIf="name.pristine || (user.name.length == 0)">Somente letras são permitidas</span>
+          </div>
+          <input class="form-control mb-4" placeholder="Nome Completo" id="name" name="name" [(ngModel)]="user.name"
+            #name="ngModel" pattern="[A-Za-z\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff\s]*">
+          <div class="d-flex flex-column">
+            <span class="failure" *ngIf="username.dirty && username.invalid">Usuário inválido</span>
+            <span *ngIf="username.pristine || (user.username.length == 0)">Somente letras, números e
+              pontos são permitidos.</span>
+          </div>
+          <input class="form-control mb-4" placeholder="Usuário de Acesso" id="username" name="username"
+            [(ngModel)]="user.username" #username="ngModel" pattern="[a-zA-Z0-9\.]{1,10}" required>
+          <div class="d-flex flex-column">
+            <span class="failure" *ngIf="password.dirty && password.invalid">Senha inválida</span>
+            <span *ngIf="password.pristine || (user.password.length == 0)">Somente letras e números são
+              permitidos.</span>
+          </div>
+          <input class="form-control mb-4" placeholder="Senha de Acesso" id="password" name="password"
+            [(ngModel)]="user.password" #password="ngModel" pattern="[a-zA-Z0-9]{1,10}" required>
+        </div>
+        <div class="w-100">
+          <button type="submit" class="btn btn-outline-light w-100 mt-4" [disabled]="!signUpForm.form.valid">Criar
+            Conta</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+
+</div>
+
+<img src="../../../../assets/icons/back-icon.png" width="45px"
+  style="position: fixed; top: 20px; left: 15px; cursor: pointer;" (click)="goToWelcomePage()">

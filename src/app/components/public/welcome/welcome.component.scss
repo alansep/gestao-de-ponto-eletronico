@@ -1,0 +1,28 @@
+.custom-height {
+  height: calc(100vh - 50px);
+}
+
+@media (max-width: 576px) {
+  .custom-button-width {
+    width: 90vw;
+  }
+}
+
+@media (min-width: 576px) {
+  .custom-button-width {
+    width: 40vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-button-width {
+    width: 50vw;
+  }
+}
+
+@media (min-width: 992px) {
+  .custom-button-width {
+    width: 470px;
+  }
+}
+
