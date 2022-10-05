@@ -29,28 +29,34 @@ export class RouteAuthGuardService implements CanActivate {
   }
 
   public isUserAuthenticated(): boolean {
-    const userJson = this.webStorageService.readFromWebStorage('user');
-
-    if (userJson == '') {
-      return false;
-    }
-
-    const user: User = JSON.parse(userJson);
-
-    return user.isAuthenticated;
+    const userJson: string = this.webStorageService.readFromWebStorage('user');
+    return userJson != '';
   }
 
   public getUser(): User {
     return JSON.parse(this.webStorageService.readFromWebStorage('user'));
   }
 
-  public authenticateUser(user: User): boolean {
-    if (this.usersService.authenticateUser(user.username, user.password)) {
-      user.name = this.usersService.getUsers().filter(foundUser => foundUser.username === user.username)[0].name;
-      this.webStorageService.saveOnWebStorage('user', JSON.stringify(user));
-      return true;
+  public async authenticateUser(user: User): Promise<boolean> {
+    let result: boolean = await this.usersService.signIn(
+      user.username,
+      user.password
+    );
+    let foundUser: User = new User(0, '', '', '');
+
+    if (result) {
+      foundUser = await this.usersService.getUser(user.username);
     }
-    return false;
+
+    return new Promise((resolve) => {
+      if (result) {
+        user.name = foundUser.name;
+        this.webStorageService.saveOnWebStorage('user', JSON.stringify(user));
+        resolve(true);
+      } else {
+        resolve(false);
+      }
+    });
   }
 
   public logout(): void {

@@ -28,14 +28,16 @@ export class SignInComponent implements OnInit {
   }
 
   public authenticateUser(): void {
-    if (
-      this.routeAuthGuardService.authenticateUser(
-        new User(this.user.name, this.user.username, this.user.password)
+    this.routeAuthGuardService
+      .authenticateUser(
+        new User(0, this.user.name, this.user.username, this.user.password)
       )
-    ) {
-      this.router.navigate([ApplicationRoutes.DASHBOARD]);
-    } else {
-      window.alert('Usuário inválido!');
-    }
+      .then((isAuthenticated) => {
+        if (isAuthenticated) {
+          this.router.navigate([ApplicationRoutes.DASHBOARD]);
+        } else {
+          window.alert('Usuário inválido!');
+        }
+      });
   }
 }

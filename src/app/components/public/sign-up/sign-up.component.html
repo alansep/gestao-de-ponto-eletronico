@@ -29,7 +29,7 @@
             <span *ngIf="password.pristine || (user.password.length == 0)">Somente letras e números são
               permitidos.</span>
           </div>
-          <input class="form-control mb-4" placeholder="Senha de Acesso" id="password" name="password"
+          <input class="form-control mb-4" placeholder="Senha de Acesso" id="password" name="password" type="password"
             [(ngModel)]="user.password" #password="ngModel" pattern="[a-zA-Z0-9]{1,10}" required>
         </div>
         <div class="w-100">

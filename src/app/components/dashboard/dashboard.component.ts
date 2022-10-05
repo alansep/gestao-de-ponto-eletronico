@@ -11,7 +11,7 @@ import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/ser
 export class DashboardComponent implements OnInit , AfterViewChecked {
   public isFooterVisible: boolean;
   public isHeaderVisible: boolean;
-  public user: User = new User('', '', '');
+  public user: User = new User(0, '', '', '');
 
   constructor(
     private screenHandlerService: ScreenHandlerService,

@@ -1,16 +1,10 @@
 {
   "users": [
     {
-      "nome": "Gabriel",
-      "id": 1
-    }
-  ],
-  "sales": [
-    {
-      "description": "iPhone 13",
-      "value": 7000,
-      "userId": 1,
-      "id": 2
+      "id": 1,
+      "name": "Administrador",
+      "username": "admin",
+      "password": "admin123"
     }
   ]
 }
