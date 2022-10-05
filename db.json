@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "nome": "Gabriel",
+      "id": 1
+    }
+  ],
+  "sales": [
+    {
+      "description": "iPhone 13",
+      "value": 7000,
+      "userId": 1,
+      "id": 2
+    }
+  ]
+}

@@ -15,7 +15,8 @@ export class ApplicationRoutes {
   public static DASHBOARD = 'dashboard';
   public static INICIO = 'inicio';
   public static FUNCIONARIOS = 'funcionarios';
-  public static FUNCIONARIOS_BUSCA = 'funcionarios/busca';
+  public static FUNCIONARIOS_BUSCA = 'funcionarios';
+  public static BUSCA = 'busca';
   public static FUNCIONARIOS_BUSCA_ID = 'funcionarios/busca/:id';
   public static MARCACOES = 'marcacoes';
   public static RELATORIOS = 'relatorios';
@@ -34,7 +35,7 @@ export class ApplicationRoutes {
           component: FuncionariosComponent,
         },
         {
-          path: ApplicationRoutes.FUNCIONARIOS_BUSCA,
+          path:  ApplicationRoutes.FUNCIONARIOS + '/' + ApplicationRoutes.BUSCA,
           component: FuncionariosBuscaComponent,
         },
         {
