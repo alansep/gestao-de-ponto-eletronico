@@ -1,0 +1,6 @@
+{
+  "/usuarios": "/users",
+  "/usuarios/:id": "/users/:id",
+  "/vendas": "/sales",
+  "/vendas/:id": "/sales/:id"
+}

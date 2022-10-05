@@ -21,6 +21,6 @@ export class FuncionariosComponent implements OnInit {
   }
 
   public goToWorkerSearchPage(): void {
-    this.router.navigateByUrl(ApplicationRoutes.FUNCIONARIOS_BUSCA);
+    this.router.navigate([ApplicationRoutes.DASHBOARD, ApplicationRoutes.FUNCIONARIOS, ApplicationRoutes.BUSCA]);
   }
 }

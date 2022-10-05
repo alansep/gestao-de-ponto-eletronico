@@ -1,7 +1,13 @@
-import { RouteAuthGuardService } from './../../../../shared-services/route-auth-guard.service';
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivationStart, Router } from '@angular/router';
+import {
+  ChangeDetectorRef,
+  Component,
+  Input,
+  OnInit
+} from '@angular/core';
+import { ActivationStart, Router } from '@angular/router';
+import { ApplicationRoutes } from 'src/app/shared-services/application-routes';
 import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/services/screen-handler.service';
+import { RouteAuthGuardService } from './../../../../shared-services/route-auth-guard.service';
 import { HeaderState } from './domain/header-state';
 
 @Component({
@@ -9,7 +15,7 @@ import { HeaderState } from './domain/header-state';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export default class HeaderComponent implements OnInit {
   private headerState: HeaderState = HeaderState.HOME_STATE;
   private url: Array<string> = [];
 
@@ -19,18 +25,19 @@ export class HeaderComponent implements OnInit {
   constructor(
     private router: Router,
     private screenHandlerService: ScreenHandlerService,
-    private routeAuthGuardService: RouteAuthGuardService
-  ) {
-    this.screenHandlerService.headerStateObservable.subscribe(
-      (result) => (this.headerState = result)
-    );
-  }
+    private routeAuthGuardService: RouteAuthGuardService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.router.events.subscribe((data) => {
       if (data instanceof ActivationStart) {
         this.url = data.snapshot.url.map((path) => path.path);
       }
+    });
+    this.screenHandlerService.headerStateObservable.subscribe((result) => {
+      this.headerState = result;
+      this.cdr.detectChanges();
     });
   }
 
@@ -49,11 +56,12 @@ export class HeaderComponent implements OnInit {
   public backToPreviousPage(): void {
     let rootPath = this.url;
     rootPath.pop();
+    rootPath.unshift(ApplicationRoutes.DASHBOARD);
     this.router.navigate(rootPath);
   }
 
   public backToWelcomePage(): void {
     this.routeAuthGuardService.logout();
-    this.router.navigate([''])
+    this.router.navigate(['']);
   }
 }

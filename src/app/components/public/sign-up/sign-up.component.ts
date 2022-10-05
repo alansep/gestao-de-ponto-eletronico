@@ -31,13 +31,13 @@ export class SignUpComponent implements OnInit {
   }
 
   public createUser(): void {
-    let user = new User(this.user.name, this.user.username, this.user.password);
-    if (this.usersService.saveUser(user)) {
-      if (this.routeAuthGuardService.authenticateUser(user)) {
+    let user = new User(0, this.user.name, this.user.username, this.user.password);
+    this.usersService.saveUser(user).then(resolve => {
+      this.routeAuthGuardService.authenticateUser(resolve).then(resolve => {
         this.router.navigate([ApplicationRoutes.DASHBOARD]);
-      }
-    } else {
-      window.alert('Usuário já existe!');
-    }
+      });
+    }).catch(err => {
+      window.alert(err);
+    });
   }
 }
