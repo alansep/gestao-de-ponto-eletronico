@@ -1,3 +1,4 @@
+import { ApplicationRoutes } from 'src/app/shared-services/application-routes';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/services/screen-handler.service';
@@ -46,6 +47,11 @@ export class FuncionariosBuscaComponent implements OnInit {
   }
 
   public selectWorker(worker: Worker): void {
-    this.router.navigate(['funcionarios', 'busca', worker.id.toString()]);
+    this.router.navigate([
+      ApplicationRoutes.DASHBOARD,
+      ApplicationRoutes.FUNCIONARIOS,
+      ApplicationRoutes.BUSCA,
+      worker.id.toString(),
+    ]);
   }
 }
