@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HeaderState } from '../../../header/domain/header-state';
-import { FooterService } from './../../../footer/service/footer.service';
-import { HeaderService } from './../../../header/service/header.service';
-import { Worker } from './../domain/funcionario';
-import { FuncionariosService } from './../service/funcionarios.service';
+import { HeaderState } from '../../header/domain/header-state';
+import { FooterService } from '../../footer/service/footer.service';
+import { HeaderService } from '../../header/service/header.service';
+import { Worker } from '../funcionarios/domain/funcionario';
+import { FuncionariosService } from '../funcionarios/service/funcionarios.service';
 
 @Component({
   selector: 'app-funcionario-detalhado',
-  templateUrl: './funcionario-detalhado.component.html',
-  styleUrls: ['./funcionario-detalhado.component.scss'],
+  templateUrl: './funcionario-detail.component.html',
+  styleUrls: ['./funcionario-detail.component.scss'],
 })
 export class FuncionarioDetalhadoComponent implements OnInit {
   constructor(
