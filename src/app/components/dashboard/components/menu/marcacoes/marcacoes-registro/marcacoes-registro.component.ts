@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { FuncionariosService } from './../../funcionarios/service/funcionarios.service';
 import { Component, OnInit } from '@angular/core';
 import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/services/screen-handler.service';
@@ -17,7 +18,7 @@ export class MarcacoesRegistroComponent implements OnInit {
   public isOnConfirmation: boolean = false;
   public isOnSuccessMessage: boolean = false;
 
-  constructor(private screenHandlerService: ScreenHandlerService, private funcionarioService: FuncionariosService) {}
+  constructor(private screenHandlerService: ScreenHandlerService, private funcionarioService: FuncionariosService, private router: Router) {}
 
   ngOnInit(): void {
     this.screenHandlerService.setHeaderStateAs(HeaderState.FEATURE_STATE);
@@ -40,6 +41,14 @@ export class MarcacoesRegistroComponent implements OnInit {
     this.isOnSuccessMessage = false;
     this.isOnConfirmation = false;
     this.selectedWorker = new Worker(0, '', '', '', '', '');
+    this.goToPreviousScreen();
+  }
+
+  public goToPreviousScreen(): void {
+    let route = this.router.url.split('/');
+    route.shift();
+    route.pop();
+    this.router.navigate(route);
   }
 
 }

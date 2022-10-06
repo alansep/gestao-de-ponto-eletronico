@@ -1,9 +1,4 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  Input,
-  OnInit
-} from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { ActivationStart, Router } from '@angular/router';
 import { ApplicationRoutes } from 'src/app/shared-services/application-routes';
 import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/services/screen-handler.service';
@@ -57,8 +52,6 @@ export default class HeaderComponent implements OnInit {
     let route = this.router.url.split('/');
     route.shift();
     route.pop();
-    console.log(route);
-
     this.router.navigate(route);
   }
 
