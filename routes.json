@@ -1,6 +1,8 @@
 {
   "/usuarios": "/users",
   "/usuarios/:id": "/users/:id",
-  "/vendas": "/sales",
-  "/vendas/:id": "/sales/:id"
+  "/funcionarios": "/workers",
+  "/funcionarios/:id": "/workers/:id",
+  "/marcacoes": "/clockPunches",
+  "/marcacoes/:id": "/clockPunches/:id"
 }

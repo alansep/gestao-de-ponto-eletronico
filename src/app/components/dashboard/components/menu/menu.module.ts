@@ -11,6 +11,7 @@ import { FuncionariosService } from './funcionarios/service/funcionarios.service
 import { InicioComponent } from './inicio/inicio.component';
 import { MarcacoesComponent } from './marcacoes/marcacoes.component';
 import { RelatoriosComponent } from './relatorios/relatorios.component';
+import { MarcacoesRegistroComponent } from './marcacoes/marcacoes-registro/marcacoes-registro.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RelatoriosComponent } from './relatorios/relatorios.component';
     RelatoriosComponent,
     FuncionariosBuscaComponent,
     FuncionarioDetalhadoComponent,
+    MarcacoesRegistroComponent,
   ],
   imports: [
     CommonModule,

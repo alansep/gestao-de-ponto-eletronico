@@ -16,6 +16,8 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.changeSelectedMenu(this.router.url.split('/')[2]);
+
     this.router.events.subscribe((data) => {
       if (data instanceof ActivationStart) {
         let rootPath: string = data.snapshot.url.map((path) => path.path)[0];
@@ -47,5 +49,22 @@ export class FooterComponent implements OnInit {
 
   public getSelectedMenu(): FooterSectionMenu {
     return this.footerSection.getSelectedMenu();
+  }
+
+  private changeSelectedMenu(menu: string) {
+    switch (menu) {
+      case 'inicio':
+        this.selectMenuAsEnabled(FooterSectionMenu.HOME);
+        break;
+      case 'funcionarios':
+        this.selectMenuAsEnabled(FooterSectionMenu.WORKER);
+        break;
+      case 'marcacoes':
+        this.selectMenuAsEnabled(FooterSectionMenu.CLOCK);
+        break;
+      case 'relatorios':
+        this.selectMenuAsEnabled(FooterSectionMenu.REPORT);
+        break;
+    }
   }
 }

@@ -1,0 +1,25 @@
+.darker-background {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.452);
+  backdrop-filter: blur(3px);
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.on-confirmation {
+  height: 90vh;
+  overflow-y: hidden;
+}
+
+.message {
+  background-color: #d9d9d9;
+  height: 200px;
+  width: 70%;
+  border-radius: 5px;
+}
+
+button {
+  border: 1px black;
+}
