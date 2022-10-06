@@ -11,20 +11,29 @@ import { Worker } from '../../funcionarios/domain/funcionario';
   styleUrls: ['./marcacoes-registro.component.scss'],
 })
 export class MarcacoesRegistroComponent implements OnInit {
-
-  public workers : Array<Worker> = [];
+  public workers: Array<Worker> = [];
   public selectedWorker: Worker = new Worker(0, '', '', '', '', '');
 
   public isOnConfirmation: boolean = false;
   public isOnSuccessMessage: boolean = false;
+  public clockPunchDate: Date = new Date();
 
-  constructor(private screenHandlerService: ScreenHandlerService, private funcionarioService: FuncionariosService, private router: Router) {}
+  constructor(
+    private screenHandlerService: ScreenHandlerService,
+    private funcionarioService: FuncionariosService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.screenHandlerService.setHeaderStateAs(HeaderState.FEATURE_STATE);
     this.screenHandlerService.setFooterVisibilityAs(false);
     this.isOnConfirmation = false;
-    this.funcionarioService.getWorkers().subscribe(result => this.workers = result);
+    this.funcionarioService.getWorkers().subscribe(
+      (result) => (this.workers = result),
+      (err) => {
+        this.goToPreviousScreen();
+      }
+    );
   }
 
   public getWorker(worker: Worker): void {
@@ -35,6 +44,7 @@ export class MarcacoesRegistroComponent implements OnInit {
   public punchClock(): void {
     this.isOnSuccessMessage = true;
     this.isOnConfirmation = false;
+    this.clockPunchDate = new Date();
   }
 
   public hideSuccessMessage(): void {
@@ -50,5 +60,4 @@ export class MarcacoesRegistroComponent implements OnInit {
     route.pop();
     this.router.navigate(route);
   }
-
 }

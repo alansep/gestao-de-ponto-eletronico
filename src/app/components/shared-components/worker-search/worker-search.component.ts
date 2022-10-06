@@ -34,7 +34,7 @@ export class WorkerSearchComponent implements OnInit, OnChanges {
   public search(name: string): void {
     if (name) {
       this.filteredWorkers = this.workers.filter((worker) =>
-        worker.name.match(name)
+        worker.name.toUpperCase().match(name.toUpperCase())
       );
     } else {
       this.filteredWorkers = this.workers;
