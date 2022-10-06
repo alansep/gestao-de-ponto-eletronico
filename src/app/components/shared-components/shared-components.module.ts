@@ -1,12 +1,14 @@
+import { UsersService } from './../../shared-services/users.service';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
 import { InputWithLabelComponent } from './input-with-label/input-with-label.component';
+import { WorkerSearchComponent } from './worker-search/worker-search.component';
 
 @NgModule({
-  declarations: [DashboardCardComponent, InputWithLabelComponent],
+  declarations: [DashboardCardComponent, InputWithLabelComponent, WorkerSearchComponent],
   imports: [CommonModule, FormsModule],
-  exports: [DashboardCardComponent, InputWithLabelComponent],
+  exports: [DashboardCardComponent, InputWithLabelComponent, WorkerSearchComponent]
 })
 export class SharedComponentsModule {}

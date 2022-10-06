@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" [class.on-confirmation]="isOnConfirmation || isOnSuccessMessage">
+      <app-worker-search [workers]="workers" (onSelectWorker)="getWorker($event)"> </app-worker-search>
+    </div>
+  </div>
+</div>
+
+<div class="darker-background" *ngIf="isOnConfirmation">
+  <div class="d-flex w-100 h-100 justify-content-center align-items-center">
+    <div class="message d-flex flex-column justify-content-around">
+      <span class="mx-2" style="text-align: center">Deseja realmente realizar a marcação para
+        <br><b>{{selectedWorker.name}}</b>?</span>
+      <div class="w-100 d-flex justify-content-around">
+        <button class="btn btn-primary fundo-azul-com-baixa-saturacao px-4" (click)="isOnConfirmation = false">
+          Não
+        </button>
+        <button class="btn btn-primary fundo-azul-claro px-4" (click)="punchClock()">
+          Sim
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="darker-background" *ngIf="isOnSuccessMessage" (click)="hideSuccessMessage()">
+  <div class="d-flex w-100 h-100 justify-content-center align-items-center">
+    <div class="message d-flex flex-column justify-content-around px-3" style="text-align: center;">
+      <h2>Marcação realizada com sucesso!</h2>
+    </div>
+  </div>
+</div>

@@ -1,14 +1,19 @@
 import { User } from './../public/domain/user';
-import { AfterViewChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import {
+  AfterViewChecked,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { RouteAuthGuardService } from 'src/app/shared-services/route-auth-guard.service';
 import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/services/screen-handler.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent implements OnInit , AfterViewChecked {
+export class DashboardComponent implements OnInit {
   public isFooterVisible: boolean;
   public isHeaderVisible: boolean;
   public user: User = new User(0, '', '', '');
@@ -21,7 +26,9 @@ export class DashboardComponent implements OnInit , AfterViewChecked {
     this.isFooterVisible = screenHandlerService.isFooterVisible;
     this.isHeaderVisible = screenHandlerService.isHeaderVisible;
   }
-  ngAfterViewChecked(): void {
+
+  ngOnInit(): void {
+    this.user = this.routeAuthGuardService.getUser();
     this.screenHandlerService.footerVisibilityObservable.subscribe((result) => {
       this.isFooterVisible = result;
       this.cdr.detectChanges();
@@ -30,12 +37,4 @@ export class DashboardComponent implements OnInit , AfterViewChecked {
       (result) => (this.isHeaderVisible = result)
     );
   }
-
-
-  ngOnInit(): void {
-    this.user = this.routeAuthGuardService.getUser();
-    console.log(this.user);
-
-  }
-
 }

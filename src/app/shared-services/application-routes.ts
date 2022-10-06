@@ -1,3 +1,4 @@
+import { MarcacoesRegistroComponent } from './../components/dashboard/components/menu/marcacoes/marcacoes-registro/marcacoes-registro.component';
 import { Routes } from '@angular/router';
 import { FuncionarioDetalhadoComponent } from '../components/dashboard/components/menu/funcionarios/funcionario-detalhado/funcionario-detalhado.component';
 import { FuncionariosBuscaComponent } from '../components/dashboard/components/menu/funcionarios/funcionarios-busca/funcionarios-busca.component';
@@ -22,7 +23,7 @@ export class ApplicationRoutes {
   public static RELATORIOS = 'relatorios';
   public static SIGN_IN = 'sign-in';
   public static SIGN_UP = 'sign-up';
-
+  public static REGISTRO = 'registro'
   public static routes: Routes = [
     {
       path: ApplicationRoutes.DASHBOARD,
@@ -42,6 +43,7 @@ export class ApplicationRoutes {
           path: ApplicationRoutes.FUNCIONARIOS_BUSCA_ID,
           component: FuncionarioDetalhadoComponent,
         },
+        { path: ApplicationRoutes.MARCACOES + '/' + ApplicationRoutes.REGISTRO, component: MarcacoesRegistroComponent },
         { path: ApplicationRoutes.MARCACOES, component: MarcacoesComponent },
         { path: ApplicationRoutes.RELATORIOS, component: RelatoriosComponent },
         { path: '', redirectTo: ApplicationRoutes.INICIO, pathMatch: 'full' },
@@ -60,4 +62,5 @@ export class ApplicationRoutes {
       component: SignUpComponent,
     },
   ];
+
 }

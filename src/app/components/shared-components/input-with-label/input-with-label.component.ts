@@ -28,8 +28,14 @@ export class InputWithLabelComponent implements OnInit {
   }
 
   private extractContent($event: any): string {
+
+    if($event.key === 'CapsLock'){
+      return this.content;
+    }
+
     return $event.key === 'Backspace'
       ? this.content.substring(0, this.content.length - 1)
       : this.content + $event.key;
   }
+
 }

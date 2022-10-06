@@ -1,0 +1,11 @@
+<div class="d-flex flex-column">
+  <div>
+    <app-input-with-label label="Digite o nome do funcionario" (onTyping)="search($event)"></app-input-with-label>
+  </div>
+  <div class="mt-4 mb-3" style="background-color: black; height:1px; width: 100vw; margin-left: -12px;"></div>
+  <div *ngFor="let worker of filteredWorkers">
+    <div class="w-100 card-funcionario mt-2 mb-2 cor-azul-escuro" (click)="selectWorker(worker)">
+      {{worker.name}}
+    </div>
+  </div>
+</div>

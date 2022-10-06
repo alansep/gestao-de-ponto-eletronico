@@ -54,10 +54,12 @@ export default class HeaderComponent implements OnInit {
   }
 
   public backToPreviousPage(): void {
-    let rootPath = this.url;
-    rootPath.pop();
-    rootPath.unshift(ApplicationRoutes.DASHBOARD);
-    this.router.navigate(rootPath);
+    let route = this.router.url.split('/');
+    route.shift();
+    route.pop();
+    console.log(route);
+
+    this.router.navigate(route);
   }
 
   public backToWelcomePage(): void {
