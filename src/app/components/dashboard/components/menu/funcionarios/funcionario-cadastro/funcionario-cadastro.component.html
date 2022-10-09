@@ -1,6 +1,9 @@
 <form #createWorkerForm="ngForm" (ngSubmit)="saveWorker()">
   <div class="container-fluid">
     <div class="row">
+      <div class="col-12 mt-3">
+        <app-operation-title [imageFrom]="titleIcon" text="Cadastro de Funcionário"></app-operation-title>
+      </div>
       <div class="col-12 col-sm-6">
         <input class="form-control mt-4" placeholder="Nome Completo" id="name" name="name" [(ngModel)]="worker.name" required>
         <input class="form-control mt-4" placeholder="Departamento" id="department" name="department" [(ngModel)]="worker.department" required>

@@ -399,9 +399,9 @@
       "emailAddress": "kerrihayes@tripsch.com"
     },
     {
+      "department": "teste",
       "id": 50,
       "name": "Gui lesionado",
-      "department": "teste",
       "workShift": "teste",
       "phone": "teste",
       "emailAddress": "teste.teste@gmail.com"

@@ -4,6 +4,7 @@ import { Worker } from './../domain/funcionario';
 import { ScreenHandlerService } from './../../../../../../shared-services/screen-handler/services/screen-handler.service';
 import { Component, OnInit } from '@angular/core';
 import { HeaderState } from '../../../header/domain/header-state';
+import { FooterSectionMenu } from '../../../footer/domain/footer-section-menu';
 
 @Component({
   selector: 'app-funcionario-cadastro',
@@ -13,8 +14,13 @@ import { HeaderState } from '../../../header/domain/header-state';
 export class FuncionarioCadastroComponent implements OnInit {
   public worker: Worker = new Worker(0, '', '', '', '', '');
   public isOnSuccessMessage: boolean = false;
+  public titleIcon: FooterSectionMenu = FooterSectionMenu.WORKER;
 
-  constructor(private screenHandlerService: ScreenHandlerService, private service : FuncionariosService, private router: Router) {}
+  constructor(
+    private screenHandlerService: ScreenHandlerService,
+    private service: FuncionariosService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.screenHandlerService.setHeaderStateAs(HeaderState.FEATURE_STATE);
@@ -22,13 +28,14 @@ export class FuncionarioCadastroComponent implements OnInit {
   }
 
   public saveWorker(): void {
-
-    this.service.createWorker(this.worker).then(resolve => {
-      this.isOnSuccessMessage = true;
-    }, reject => {
-      alert(reject);
-    })
-
+    this.service.createWorker(this.worker).then(
+      (resolve) => {
+        this.isOnSuccessMessage = true;
+      },
+      (reject) => {
+        alert(reject);
+      }
+    );
   }
 
   public finishOperation(): void {

@@ -4,6 +4,7 @@ import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/ser
 import { HeaderState } from '../../../header/domain/header-state';
 import { FuncionariosService } from '../service/funcionarios.service';
 import { Worker } from '../domain/funcionario';
+import { FooterSectionMenu } from '../../../footer/domain/footer-section-menu';
 
 @Component({
   selector: 'app-funcionario-detalhado',
@@ -18,6 +19,7 @@ export class FuncionarioDetalhadoComponent implements OnInit {
   public isOnSuccessUpdatingMessage: boolean = false;
   public isOnDeletingConfirmationStep: boolean = false;
   public isOnSuccessDeletingMessage: boolean = false;
+  public titleIcon: FooterSectionMenu = FooterSectionMenu.WORKER;
 
   constructor(
     private route: ActivatedRoute,

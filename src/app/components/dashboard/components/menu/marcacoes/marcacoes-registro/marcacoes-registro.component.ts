@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/services/screen-handler.service';
 import { HeaderState } from '../../../header/domain/header-state';
 import { Worker } from '../../funcionarios/domain/funcionario';
+import { FooterSectionMenu } from '../../../footer/domain/footer-section-menu';
 
 @Component({
   selector: 'app-marcacoes-registro',
@@ -17,6 +18,8 @@ export class MarcacoesRegistroComponent implements OnInit {
   public isOnConfirmation: boolean = false;
   public isOnSuccessMessage: boolean = false;
   public clockPunchDate: Date = new Date();
+  public titleIcon: FooterSectionMenu = FooterSectionMenu.WORKER;
+
 
   constructor(
     private screenHandlerService: ScreenHandlerService,
