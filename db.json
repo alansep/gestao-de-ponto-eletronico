@@ -413,7 +413,36 @@
       "workShift": "abc",
       "phone": "abc",
       "emailAddress": "abc@a.com"
+    },
+    {
+      "id": 52,
+      "name": "Testando 123",
+      "department": "aaa",
+      "workShift": "aaa",
+      "phone": "aaaaa",
+      "emailAddress": "alang.von@gmail.com"
     }
   ],
-  "clockPunches": []
+  "clockPunches": [
+    {
+      "workerId": 2,
+      "time": "2022-10-09T18:48:29.516Z",
+      "id": 1
+    },
+    {
+      "workerId": 1,
+      "time": "2022-10-09T18:48:47.880Z",
+      "id": 2
+    },
+    {
+      "workerId": 52,
+      "time": "2022-10-09T21:04:23.418Z",
+      "id": 3
+    },
+    {
+      "workerId": 2,
+      "time": "2022-10-09T21:43:52.706Z",
+      "id": 4
+    }
+  ]
 }

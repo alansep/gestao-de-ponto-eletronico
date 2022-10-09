@@ -1,3 +1,4 @@
+import { WorkerWithClockPunch } from './../../marcacoes/marcacoes-busca/domain/worker-with-clock-punch';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -8,7 +9,6 @@ import { ResourceConfig } from './../../../../../../shared-services/resources/re
   providedIn: 'root',
 })
 export class FuncionariosClient {
-
   constructor(private http: HttpClient) {}
 
   public getWorkers(): Observable<Array<Worker>> {
@@ -27,7 +27,7 @@ export class FuncionariosClient {
     return this.http.post<Worker>(
       ResourceConfig.getHost() + '/funcionarios',
       worker
-    )
+    );
   }
 
   public updateWorker(worker: Worker): Observable<Worker> {
@@ -40,6 +40,12 @@ export class FuncionariosClient {
   public deleteWorker(id: number): Observable<void> {
     return this.http.delete<void>(
       ResourceConfig.getHost() + '/funcionarios/' + id
+    );
+  }
+
+  public getWorkersWithClockPunches(): Observable<Array<WorkerWithClockPunch>> {
+    return this.http.get<Array<WorkerWithClockPunch>>(
+      ResourceConfig.getHost() + '/workers?_embed=clockPunches'
     );
   }
 }

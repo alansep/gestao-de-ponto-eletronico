@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-3">
+      <app-operation-title [imageFrom]="titleIcon" text="Busca de Marcação"></app-operation-title>
+    </div>
+    <div class="col-12" *ngIf="onSearchMode">
+      <br>
+      <app-worker-search [workers]="workers" (onSelectWorker)="getWorker($event)"> </app-worker-search>
+    </div>
+    <div class="col-12" *ngIf="!onSearchMode">
+      <div class="w-100 card-funcionario mt-2 mb-2 cor-azul-escuro" *ngFor="let clockPunch of selectedWorker.clockPunches" (click)="openDetailedClockPunch(clockPunch)">
+        {{clockPunch.time | date:'HH:mm'}} - {{selectedWorker.name}}
+      </div>
+    </div>
+  </div>
+</div>

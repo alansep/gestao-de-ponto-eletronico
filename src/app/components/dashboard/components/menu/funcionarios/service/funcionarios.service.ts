@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { firstValueFrom, Observable } from 'rxjs';
+import { WorkerWithClockPunch } from '../../marcacoes/marcacoes-busca/domain/worker-with-clock-punch';
 import { Worker } from '../domain/funcionario';
 import { FuncionariosClient } from './funcionarios-client.service';
 
@@ -22,6 +23,17 @@ export class FuncionariosService {
 
   public deleteWorker(id: number): Observable<void> {
     return this.client.deleteWorker(id);
+  }
+
+  public async getWorkersWithClockPunches(): Promise<
+    Array<WorkerWithClockPunch>
+  > {
+    let workers = await firstValueFrom(
+      this.client.getWorkersWithClockPunches()
+    );
+    return new Promise((resolve, reject) => {
+      resolve(workers.filter((worker) => worker.clockPunches.length > 0));
+    });
   }
 
   public async createWorker(worker: Worker): Promise<Worker> {
