@@ -20,6 +20,7 @@ import { RelatoriosComponent } from './relatorios/relatorios.component';
 import { MarcacoesBuscaTodosComponent } from './marcacoes/marcacoes-busca/marcacoes-busca-todos/marcacoes-busca-todos.component';
 import { MarcacoesBuscaPorFuncionarioComponent } from './marcacoes/marcacoes-busca/marcacoes-busca-por-funcionario/marcacoes-busca-por-funcionario.component';
 import { MarcacoesBuscaDetailComponent } from './marcacoes/marcacoes-busca-detail/marcacoes-busca-detail.component';
+import { MarcacoesPorPeriodoComponent } from './relatorios/marcacoes-por-periodo/marcacoes-por-periodo.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MarcacoesBuscaDetailComponent } from './marcacoes/marcacoes-busca-detai
     MarcacoesBuscaTodosComponent,
     MarcacoesBuscaPorFuncionarioComponent,
     MarcacoesBuscaDetailComponent,
+    MarcacoesPorPeriodoComponent,
   ],
   imports: [
     CommonModule,
@@ -51,7 +53,11 @@ import { MarcacoesBuscaDetailComponent } from './marcacoes/marcacoes-busca-detai
     FuncionariosBuscaComponent,
     FuncionarioDetalhadoComponent,
     FuncionarioCadastroComponent,
-    MarcacoesBuscaComponent
+    MarcacoesBuscaComponent,
+    MarcacoesBuscaTodosComponent,
+    MarcacoesBuscaPorFuncionarioComponent,
+    MarcacoesBuscaDetailComponent,
+    MarcacoesPorPeriodoComponent,
   ],
   providers: [FuncionariosService, FuncionariosClient, MarcacoesService, MarcacoesClientService],
 })
