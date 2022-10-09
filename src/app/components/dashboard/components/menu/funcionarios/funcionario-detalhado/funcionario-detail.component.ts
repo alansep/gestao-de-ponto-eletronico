@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/services/screen-handler.service';
-import { HeaderState } from '../../header/domain/header-state';
-import { FuncionariosService } from '../funcionarios/service/funcionarios.service';
-import { Worker } from './../funcionarios/domain/funcionario';
+import { HeaderState } from '../../../header/domain/header-state';
+import { FuncionariosService } from '../service/funcionarios.service';
+import { Worker } from '../domain/funcionario';
 
 @Component({
   selector: 'app-funcionario-detalhado',

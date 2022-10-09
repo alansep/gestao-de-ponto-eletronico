@@ -1,6 +1,6 @@
 import { MarcacoesRegistroComponent } from './../components/dashboard/components/menu/marcacoes/marcacoes-registro/marcacoes-registro.component';
 import { Routes } from '@angular/router';
-import { FuncionarioDetalhadoComponent } from '../components/dashboard/components/menu/funcionario-detalhado/funcionario-detail.component';
+import { FuncionarioDetalhadoComponent } from '../components/dashboard/components/menu/funcionarios/funcionario-detalhado/funcionario-detail.component';
 import { FuncionariosBuscaComponent } from '../components/dashboard/components/menu/funcionarios/funcionarios-busca/funcionarios-busca.component';
 import { FuncionariosComponent } from '../components/dashboard/components/menu/funcionarios/funcionarios.component';
 import { InicioComponent } from '../components/dashboard/components/menu/inicio/inicio.component';
