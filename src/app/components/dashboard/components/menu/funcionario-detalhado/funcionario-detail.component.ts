@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ScreenHandlerService } from 'src/app/shared-services/screen-handler/services/screen-handler.service';
 import { HeaderState } from '../../header/domain/header-state';
-import { FooterService } from '../../footer/service/footer.service';
-import { HeaderService } from '../../header/service/header.service';
-import { Worker } from '../funcionarios/domain/funcionario';
 import { FuncionariosService } from '../funcionarios/service/funcionarios.service';
+import { Worker } from './../funcionarios/domain/funcionario';
 
 @Component({
   selector: 'app-funcionario-detalhado',
@@ -12,25 +11,80 @@ import { FuncionariosService } from '../funcionarios/service/funcionarios.servic
   styleUrls: ['./funcionario-detail.component.scss'],
 })
 export class FuncionarioDetalhadoComponent implements OnInit {
+  public isFormBlocked: boolean = false;
+  public lastWorkerId: number = 0;
+  public isOnUpdatingConfirmationStep: boolean = false;
+  public workerName: string = '';
+  public isOnSuccessUpdatingMessage: boolean = false;
+  public isOnDeletingConfirmationStep: boolean = false;
+  public isOnSuccessDeletingMessage: boolean = false;
+
   constructor(
     private route: ActivatedRoute,
     private service: FuncionariosService,
-    private headerService: HeaderService,
-    private footerService: FooterService
+    private screenHandlerService: ScreenHandlerService,
+    private router: Router
   ) {}
 
   public worker: Worker = new Worker(-1, '', '', '', '', '');
 
   ngOnInit(): void {
-    this.headerService.setHeaderStateAs(HeaderState.UPDATE_STATE);
-    this.footerService.setVisibilityAs(false);
+    this.screenHandlerService.setHeaderStateAs(HeaderState.FEATURE_STATE);
+    this.screenHandlerService.setFooterVisibilityAs(false);
 
     this.route.paramMap.subscribe((params) => {
-      this.service.getWorkers().subscribe((result) => {
-        this.worker = result.filter(
-          (funcionario) => funcionario.id === Number(params.get('id'))
-        )[0];
+      this.lastWorkerId = Number(params.get('id'));
+      this.service.getWorker(Number(params.get('id'))).subscribe((worker) => {
+        this.worker = worker;
+        this.workerName = worker.name;
       });
     });
+
+    this.isFormBlocked = true;
+  }
+
+  public changeOperationMode(): void {
+    if (this.isFormBlocked) {
+      this.enableEditingMode();
+    } else {
+      this.disableEditingMode();
+    }
+  }
+
+  public enableEditingMode(): void {
+    this.screenHandlerService.setHeaderStateAs(HeaderState.UPDATE_STATE);
+    this.isFormBlocked = false;
+  }
+
+  public disableEditingMode(): void {
+    this.screenHandlerService.setHeaderStateAs(HeaderState.FEATURE_STATE);
+    this.isFormBlocked = true;
+    this.service
+      .getWorker(this.lastWorkerId)
+      .subscribe((worker) => {
+        this.worker = worker;
+        this.workerName = worker.name;
+      });
+  }
+
+  public notifyUpdatingConfirmationStep(): void {
+    this.isOnUpdatingConfirmationStep = true;
+  }
+
+  public updateWorker(): void {
+    this.service.updateWorker(this.worker).subscribe((worker) => {
+      this.isOnSuccessUpdatingMessage = true;
+    });
+  }
+
+  public finishOperation(): void {
+    let route = this.router.url.split('/');
+    route.shift();
+    route.pop();
+    this.router.navigate(route);
+  }
+
+  public deleteWorker(): void {
+    this.service.deleteWorker(this.worker.id).subscribe(() => this.isOnSuccessDeletingMessage = true);
   }
 }

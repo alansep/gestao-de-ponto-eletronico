@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -28,6 +29,7 @@ import { MarcacoesRegistroComponent } from './marcacoes/marcacoes-registro/marca
     HttpClientModule,
     SharedComponentsModule,
     ScreenHandlerModule,
+    FormsModule
   ],
   exports: [
     InicioComponent,

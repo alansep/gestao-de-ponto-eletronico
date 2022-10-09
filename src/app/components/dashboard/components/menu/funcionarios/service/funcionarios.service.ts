@@ -12,4 +12,15 @@ export class FuncionariosService {
   public getWorkers(): Observable<Array<Worker>> {
     return this.client.getWorkers();
   }
+
+  public getWorker(id: number): Observable<Worker> {
+    return this.client.getWorker(id);
+  }
+  public updateWorker(worker: Worker): Observable<Worker> {
+    return this.client.updateWorker(worker);
+  }
+
+  public deleteWorker(id: number): Observable<void> {
+    return this.client.deleteWorker(id);
+  }
 }

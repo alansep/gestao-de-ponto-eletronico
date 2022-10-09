@@ -18,6 +18,9 @@ export class InputWithLabelComponent implements OnInit {
   @Input()
   public content: string = '';
 
+  @Input('disabled')
+  public isDisabled: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {}

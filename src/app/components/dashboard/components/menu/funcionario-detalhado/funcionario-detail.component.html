@@ -1,22 +1,105 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-sm-6 col-md-4 col-xl-3 mt-3">
-      <app-input-with-label label="Nome do Funcionário" [content]="worker.name"></app-input-with-label>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-xl-3 mt-3">
-      <app-input-with-label label="Departamento" [content]="worker.department"></app-input-with-label>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-xl-3 mt-3">
-      <app-input-with-label label="Turno" [content]="worker.workShift"></app-input-with-label>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-xl-3 mt-3">
-      <app-input-with-label label="Telefone" [content]="worker.phone"></app-input-with-label>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-xl-3 mt-3">
-      <app-input-with-label label="E-mail" [content]="worker.emailAddress"></app-input-with-label>
-    </div>
+<form #workerUpdateForm="ngForm" (ngSubmit)="notifyUpdatingConfirmationStep()">
+  <div class="custom-height d-flex px-3 flex-column flex-sm-row justify-content-sm-around align-items-sm-center">
+    <div class="w-100">
+      <div class="mt-3 d-flex flex-column">
+        <span class="fw-bolder label-font-size">Nome do funcionário</span>
+        <div class="mb-1"></div>
+        <input class="form-control input-with-label p-2" id="name" name="name" [(ngModel)]="worker.name"
+          [disabled]="isFormBlocked" required>
+      </div>
 
+      <div class="mt-3 d-flex flex-column">
+        <span class="fw-bolder label-font-size">Departamento</span>
+        <div class="mb-1"></div>
+        <input class="form-control input-with-label p-2" id="department" name="department"
+          [(ngModel)]="worker.department" [disabled]="isFormBlocked" required>
+      </div>
+
+      <div class="mt-3 d-flex flex-column">
+        <span class="fw-bolder label-font-size">Turno</span>
+        <div class="mb-1"></div>
+        <input class="form-control input-with-label p-2" id="workShift" name="workShift" [(ngModel)]="worker.workShift"
+          [disabled]="isFormBlocked" required>
+      </div>
+
+      <div class="mt-3 d-flex flex-column">
+        <span class="fw-bolder label-font-size">Telefone</span>
+        <div class="mb-1"></div>
+        <input class="form-control input-with-label p-2" id="phone" name="phone" [(ngModel)]="worker.phone"
+          [disabled]="isFormBlocked" required>
+      </div>
+
+      <div class="mt-3 mb-4 d-flex flex-column">
+        <span class="fw-bolder label-font-size">E-mail</span>
+        <div class="mb-1"></div>
+        <input class="form-control input-with-label p-2" id="emailAddress" name="emailAddress"
+          [(ngModel)]="worker.emailAddress" [disabled]="isFormBlocked" required>
+      </div>
+    </div>
+    <div class="w-100 d-flex flex-row justify-content-around flex-sm-column">
+      <button type="button" class="mx-sm-5 btn btn-primary fundo-azul-claro"
+        (click)="changeOperationMode()">{{isFormBlocked ?
+        'Editar'
+        : 'Cancelar Edição'}}</button>
+      <button type="button" *ngIf="isFormBlocked"
+        class="mx-sm-5 mt-sm-3 btn btn-primary fundo-azul-com-baixa-saturacao" (click)="isOnDeletingConfirmationStep = true">Remover</button>
+      <button type="submit" [disabled]="workerUpdateForm.invalid || workerUpdateForm.pristine" *ngIf="!isFormBlocked"
+        class="mx-sm-5 mt-sm-3 btn btn-success">Confirmar Edição</button>
+    </div>
   </div>
+</form>
 
+<div class="darker-background" *ngIf="isOnUpdatingConfirmationStep">
+  <div class="d-flex w-100 h-100 justify-content-center align-items-center">
+    <div class="message d-flex flex-column justify-content-around">
+      <span class="mx-2" style="text-align: center">Deseja realmente atualizar
+        <br><b>{{workerName}}</b>?</span>
+      <div class="w-100 d-flex justify-content-around">
+        <button class="btn btn-primary fundo-azul-com-baixa-saturacao px-4"
+          (click)="isOnUpdatingConfirmationStep = false">
+          Não
+        </button>
+        <button class="btn btn-primary fundo-azul-claro px-4" (click)="updateWorker()">
+          Sim
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="darker-background" *ngIf="isOnSuccessUpdatingMessage" (click)="finishOperation()">
+  <div class="d-flex w-100 h-100 justify-content-center align-items-center">
+    <div class="message d-flex flex-column justify-content-around px-3" style="text-align: center;">
+      <h2><b>{{workerName}}</b> <br>
+        atualizado(a) com sucesso!
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div class="darker-background" *ngIf="isOnDeletingConfirmationStep">
+  <div class="d-flex w-100 h-100 justify-content-center align-items-center">
+    <div class="message d-flex flex-column justify-content-around">
+      <span class="mx-2" style="text-align: center">Deseja realmente remover
+        <br><b>{{workerName}}</b>?</span>
+      <div class="w-100 d-flex justify-content-around">
+        <button class="btn btn-primary fundo-azul-com-baixa-saturacao px-4"
+          (click)="isOnDeletingConfirmationStep = false">
+          Não
+        </button>
+        <button class="btn btn-primary fundo-azul-claro px-4" (click)="deleteWorker()">
+          Sim
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="darker-background" *ngIf="isOnSuccessDeletingMessage" (click)="finishOperation()">
+  <div class="d-flex w-100 h-100 justify-content-center align-items-center">
+    <div class="message d-flex flex-column justify-content-around px-3" style="text-align: center;">
+      <h2>Usuário removido com sucesso!
+      </h2>
+    </div>
+  </div>
 </div>
