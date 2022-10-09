@@ -397,6 +397,22 @@
       "workShift": "DIURNO",
       "phone": "+55 (976) 498-3925",
       "emailAddress": "kerrihayes@tripsch.com"
+    },
+    {
+      "id": 50,
+      "name": "Gui lesionado",
+      "department": "teste",
+      "workShift": "teste",
+      "phone": "teste",
+      "emailAddress": "teste.teste@gmail.com"
+    },
+    {
+      "id": 51,
+      "name": "abc",
+      "department": "abc",
+      "workShift": "abc",
+      "phone": "abc",
+      "emailAddress": "abc@a.com"
     }
   ],
   "clockPunches": []

@@ -1,3 +1,4 @@
+import { FuncionarioCadastroComponent } from './../components/dashboard/components/menu/funcionarios/funcionario-cadastro/funcionario-cadastro.component';
 import { MarcacoesRegistroComponent } from './../components/dashboard/components/menu/marcacoes/marcacoes-registro/marcacoes-registro.component';
 import { Routes } from '@angular/router';
 import { FuncionarioDetalhadoComponent } from '../components/dashboard/components/menu/funcionarios/funcionario-detalhado/funcionario-detail.component';
@@ -24,6 +25,8 @@ export class ApplicationRoutes {
   public static SIGN_IN = 'sign-in';
   public static SIGN_UP = 'sign-up';
   public static REGISTRO = 'registro'
+  public static CADASTRO = 'cadastro'
+
   public static routes: Routes = [
     {
       path: ApplicationRoutes.DASHBOARD,
@@ -38,6 +41,10 @@ export class ApplicationRoutes {
         {
           path:  ApplicationRoutes.FUNCIONARIOS + '/' + ApplicationRoutes.BUSCA,
           component: FuncionariosBuscaComponent,
+        },
+        {
+          path:  ApplicationRoutes.FUNCIONARIOS + '/' + ApplicationRoutes.CADASTRO,
+          component: FuncionarioCadastroComponent,
         },
         {
           path: ApplicationRoutes.FUNCIONARIOS_BUSCA_ID,

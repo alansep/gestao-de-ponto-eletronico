@@ -1,0 +1,38 @@
+<form #createWorkerForm="ngForm" (ngSubmit)="saveWorker()">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <input class="form-control mt-4" placeholder="Nome Completo" id="name" name="name" [(ngModel)]="worker.name" required>
+        <input class="form-control mt-4" placeholder="Departamento" id="department" name="department" [(ngModel)]="worker.department" required>
+        <input class="form-control mt-4" placeholder="Turno" id="workShift" name="workShift" [(ngModel)]="worker.workShift" required>
+        <input class="form-control mt-4" placeholder="Telefone" id="phone" name="phone" [(ngModel)]="worker.phone" required>
+        <input class="form-control mt-4" placeholder="E-mail" id="emailAddress" name="emailAddress" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" [(ngModel)]="worker.emailAddress" required>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-12 col-sm-3">
+        <button type="button" class="btn btn-secondary w-100 mt-5 mt-sm-3" (click)="createWorkerForm.reset()">Limpar</button>
+      </div>
+      <div class="col-12 col-sm-3">
+        <button type="submit" [disabled]="createWorkerForm.invalid"
+          class="btn btn-primary w-100 mt-3 mt-sm-3">Cadastrar</button>
+      </div>
+    </div>
+
+  </div>
+</form>
+
+<div class="darker-background" *ngIf="isOnSuccessMessage">
+  <div class="d-flex w-100 h-100 justify-content-center align-items-center">
+    <div class="message d-flex flex-column justify-content-around">
+      <span class="mx-2" style="text-align: center">O funcionário foi cadastrado com sucesso.</span>
+      <div class="w-100 d-flex justify-content-center">
+        <button class="btn btn-success px-4"
+          (click)="finishOperation()">
+          Voltar para início
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

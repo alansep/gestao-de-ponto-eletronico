@@ -8,6 +8,7 @@ import { ResourceConfig } from './../../../../../../shared-services/resources/re
   providedIn: 'root',
 })
 export class FuncionariosClient {
+
   constructor(private http: HttpClient) {}
 
   public getWorkers(): Observable<Array<Worker>> {
@@ -20,6 +21,13 @@ export class FuncionariosClient {
     return this.http.get<Worker>(
       ResourceConfig.getHost() + '/funcionarios/' + id
     );
+  }
+
+  public createWorker(worker: Worker): Observable<Worker> {
+    return this.http.post<Worker>(
+      ResourceConfig.getHost() + '/funcionarios',
+      worker
+    )
   }
 
   public updateWorker(worker: Worker): Observable<Worker> {

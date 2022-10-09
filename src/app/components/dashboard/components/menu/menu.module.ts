@@ -13,6 +13,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { MarcacoesComponent } from './marcacoes/marcacoes.component';
 import { RelatoriosComponent } from './relatorios/relatorios.component';
 import { MarcacoesRegistroComponent } from './marcacoes/marcacoes-registro/marcacoes-registro.component';
+import { FuncionarioCadastroComponent } from './funcionarios/funcionario-cadastro/funcionario-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MarcacoesRegistroComponent } from './marcacoes/marcacoes-registro/marca
     FuncionariosBuscaComponent,
     FuncionarioDetalhadoComponent,
     MarcacoesRegistroComponent,
+    FuncionarioCadastroComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +40,7 @@ import { MarcacoesRegistroComponent } from './marcacoes/marcacoes-registro/marca
     RelatoriosComponent,
     FuncionariosBuscaComponent,
     FuncionarioDetalhadoComponent,
+    FuncionarioCadastroComponent
   ],
   providers: [FuncionariosService, FuncionariosClient],
 })
