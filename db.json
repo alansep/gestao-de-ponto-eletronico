@@ -11,6 +11,12 @@
       "name": "Gabriel Alan Madureiro Gonçalves",
       "username": "alansep",
       "password": "linux12"
+    },
+    {
+      "id": 3,
+      "name": "Gabriel Alan",
+      "username": "alansep2",
+      "password": "linux123"
     }
   ],
   "workers": [

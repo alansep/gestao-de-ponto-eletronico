@@ -6,6 +6,10 @@ Sistema de Gestão de Ponto Eletrônico, desenvolvido para a disciplina de Frame
 
 https://www.figma.com/file/69o0pltq2pk4EoLZ0Cg2AU/Gest%C3%A3o-de-Ponto?node-id=0%3A1
 
+
+# Endereço do projeto no GitHub Pages
+https://alansep.github.io/gestao-de-ponto-eletronico/
+
 # Checklist
 
 - [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
