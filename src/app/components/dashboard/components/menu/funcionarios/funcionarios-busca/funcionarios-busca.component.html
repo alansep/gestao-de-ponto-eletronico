@@ -1,7 +1,10 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12 mb-4">
-      <app-input-with-label label="Digite o nome do funcionario" (onTyping)="findWorkerByName($event)"></app-input-with-label>
+    <div class="col-12 mt-3">
+      <app-operation-title [imageFrom]="titleIcon" text="Busca de Funcionários"></app-operation-title>
+    </div>
+    <div class="col-12 mt-3 mb-4">
+      <app-input-with-label label="Digite o nome do funcionario" placeholder="Nome" (onTyping)="findWorkerByName($event)"></app-input-with-label>
     </div>
     <hr>
     <div class="col-12 col-sm-6 col-md-4" *ngFor="let worker of workers">

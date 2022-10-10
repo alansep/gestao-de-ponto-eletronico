@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-3">
+      <app-operation-title [imageFrom]="titleIcon" text="Relatórios"></app-operation-title>
+    </div>
+    <div class="col-12" *ngIf="!onReportMode">
+      <br>
+      <app-worker-search [workers]="workers" (onSelectWorker)="getWorker($event)"> </app-worker-search>
+    </div>
+    <div class="col-12 mt-4" *ngIf="onReportMode">
+      <div class="d-flex flex-column">
+        <span class="fw-bolder label-font-size">Digite o nome do funcionário</span>
+        <div class="mb-1"></div>
+        <input class="form-control input-with-label p-2" [value]="foundWorker.name" disabled="true">
+      </div>
+      <div class="mt-4 mb-3" style="background-color: black; height:1px; width: 100vw; margin-left: -12px;"></div>
+    </div>
+    <div class="col-12 mt-5" *ngIf="onReportMode">
+      <app-dashboard-card title="Horas trabalhadas" [value]="hourQuantity" valueColor="#20bf6b"></app-dashboard-card>
+    </div>
+
+  </div>
+</div>

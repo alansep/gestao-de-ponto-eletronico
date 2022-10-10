@@ -5,6 +5,12 @@
       "name": "Administrador",
       "username": "admin",
       "password": "admin123"
+    },
+    {
+      "id": 2,
+      "name": "Gabriel Alan Madureiro Gonçalves",
+      "username": "alansep",
+      "password": "linux12"
     }
   ],
   "workers": [
@@ -12,404 +18,431 @@
       "id": 0,
       "name": "Beck Frank",
       "department": "TALAE",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (857) 561-2491",
-      "emailaddress": "beckfrank@talae.com"
+      "emailAddress": "beckfrank@talae.com"
     },
     {
       "id": 1,
       "name": "Jewel Bernard",
       "department": "PRISMATIC",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (935) 441-2301",
-      "emailaddress": "jewelbernard@prismatic.com"
+      "emailAddress": "jewelbernard@prismatic.com"
     },
     {
       "id": 2,
       "name": "Faye Moody",
       "department": "ZAPHIRE",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (986) 502-2915",
-      "emailaddress": "fayemoody@zaphire.com"
+      "emailAddress": "fayemoody@zaphire.com"
     },
     {
       "id": 3,
       "name": "Kaitlin Bryant",
       "department": "ENDIPIN",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (984) 464-2276",
-      "emailaddress": "kaitlinbryant@endipin.com"
+      "emailAddress": "kaitlinbryant@endipin.com"
     },
     {
       "id": 4,
       "name": "Mara Hogan",
       "department": "DANCITY",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (975) 554-3042",
-      "emailaddress": "marahogan@dancity.com"
+      "emailAddress": "marahogan@dancity.com"
     },
     {
       "id": 5,
       "name": "Sears Kemp",
       "department": "COMVOY",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (905) 410-2428",
-      "emailaddress": "searskemp@comvoy.com"
+      "emailAddress": "searskemp@comvoy.com"
     },
     {
       "id": 6,
       "name": "Webster Shields",
       "department": "GLUID",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (857) 564-3750",
-      "emailaddress": "webstershields@gluid.com"
+      "emailAddress": "webstershields@gluid.com"
     },
     {
       "id": 7,
       "name": "Joanna Reyes",
       "department": "ROCKLOGIC",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (939) 416-3778",
-      "emailaddress": "joannareyes@rocklogic.com"
+      "emailAddress": "joannareyes@rocklogic.com"
     },
     {
       "id": 8,
       "name": "Lancaster Kline",
       "department": "INSURITY",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (903) 446-3375",
-      "emailaddress": "lancasterkline@insurity.com"
+      "emailAddress": "lancasterkline@insurity.com"
     },
     {
       "id": 9,
       "name": "Malinda Durham",
       "department": "BOILICON",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (838) 551-2093",
-      "emailaddress": "malindadurham@boilicon.com"
+      "emailAddress": "malindadurham@boilicon.com"
     },
     {
       "id": 10,
       "name": "House Stokes",
       "department": "IMMUNICS",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (895) 571-2764",
-      "emailaddress": "housestokes@immunics.com"
-    },
-    {
-      "id": 11,
-      "name": "Alice Nieves",
-      "department": "GEEKOLA",
-      "workshift": "DIURNO",
-      "phone": "+55 (868) 591-2351",
-      "emailaddress": "alicenieves@geekola.com"
+      "emailAddress": "housestokes@immunics.com"
     },
     {
       "id": 12,
       "name": "Durham Cabrera",
       "department": "LIQUIDOC",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (885) 551-3403",
-      "emailaddress": "durhamcabrera@liquidoc.com"
+      "emailAddress": "durhamcabrera@liquidoc.com"
     },
     {
       "id": 13,
       "name": "Reeves Doyle",
       "department": "ORBIXTAR",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (880) 512-2453",
-      "emailaddress": "reevesdoyle@orbixtar.com"
+      "emailAddress": "reevesdoyle@orbixtar.com"
     },
     {
       "id": 14,
       "name": "Noemi Conway",
       "department": "ILLUMITY",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (990) 452-3366",
-      "emailaddress": "noemiconway@illumity.com"
+      "emailAddress": "noemiconway@illumity.com"
     },
     {
       "id": 15,
       "name": "Georgina Valdez",
       "department": "ANDERSHUN",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (883) 404-3608",
-      "emailaddress": "georginavaldez@andershun.com"
+      "emailAddress": "georginavaldez@andershun.com"
     },
     {
       "id": 16,
       "name": "Lowe Chandler",
       "department": "FARMAGE",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (897) 409-2463",
-      "emailaddress": "lowechandler@farmage.com"
+      "emailAddress": "lowechandler@farmage.com"
     },
     {
       "id": 17,
       "name": "Glenn Casey",
       "department": "VIRVA",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (807) 432-3958",
-      "emailaddress": "glenncasey@virva.com"
+      "emailAddress": "glenncasey@virva.com"
     },
     {
       "id": 18,
       "name": "Head Boyer",
       "department": "EVENTAGE",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (851) 577-3430",
-      "emailaddress": "headboyer@eventage.com"
+      "emailAddress": "headboyer@eventage.com"
     },
     {
       "id": 19,
       "name": "Burton Everett",
       "department": "FUTURIS",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (831) 465-2476",
-      "emailaddress": "burtoneverett@futuris.com"
+      "emailAddress": "burtoneverett@futuris.com"
     },
     {
       "id": 20,
       "name": "Gates Ashley",
       "department": "GRUPOLI",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (871) 582-3678",
-      "emailaddress": "gatesashley@grupoli.com"
+      "emailAddress": "gatesashley@grupoli.com"
     },
     {
       "id": 21,
       "name": "Merrill Head",
       "department": "CEPRENE",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (936) 583-3120",
-      "emailaddress": "merrillhead@ceprene.com"
+      "emailAddress": "merrillhead@ceprene.com"
     },
     {
       "id": 22,
       "name": "Leslie Glenn",
       "department": "TUBALUM",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (956) 545-2115",
-      "emailaddress": "leslieglenn@tubalum.com"
+      "emailAddress": "leslieglenn@tubalum.com"
     },
     {
       "id": 23,
       "name": "Kelly Orr",
       "department": "ANACHO",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (907) 496-2378",
-      "emailaddress": "kellyorr@anacho.com"
+      "emailAddress": "kellyorr@anacho.com"
     },
     {
       "id": 24,
       "name": "Nanette Silva",
       "department": "GEOFORM",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (915) 429-3471",
-      "emailaddress": "nanettesilva@geoform.com"
+      "emailAddress": "nanettesilva@geoform.com"
     },
     {
       "id": 25,
       "name": "Salinas Buckner",
       "department": "QUONATA",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (904) 414-3977",
-      "emailaddress": "salinasbuckner@quonata.com"
+      "emailAddress": "salinasbuckner@quonata.com"
     },
     {
       "id": 26,
       "name": "Richard Hall",
       "department": "ACCUPHARM",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (917) 487-2985",
-      "emailaddress": "richardhall@accupharm.com"
+      "emailAddress": "richardhall@accupharm.com"
     },
     {
       "id": 27,
       "name": "Gamble Castaneda",
       "department": "KLUGGER",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (846) 522-3916",
-      "emailaddress": "gamblecastaneda@klugger.com"
+      "emailAddress": "gamblecastaneda@klugger.com"
     },
     {
       "id": 28,
       "name": "Shaw Dale",
       "department": "OMATOM",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (939) 491-2577",
-      "emailaddress": "shawdale@omatom.com"
+      "emailAddress": "shawdale@omatom.com"
     },
     {
       "id": 29,
       "name": "Magdalena Mccormick",
       "department": "MARVANE",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (925) 489-3507",
-      "emailaddress": "magdalenamccormick@marvane.com"
+      "emailAddress": "magdalenamccormick@marvane.com"
     },
     {
       "id": 30,
       "name": "Rivera Guerrero",
       "department": "BLUPLANET",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (979) 583-3179",
-      "emailaddress": "riveraguerrero@bluplanet.com"
+      "emailAddress": "riveraguerrero@bluplanet.com"
     },
     {
       "id": 31,
       "name": "Robyn Jacobson",
       "department": "VISALIA",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (932) 482-3631",
-      "emailaddress": "robynjacobson@visalia.com"
+      "emailAddress": "robynjacobson@visalia.com"
     },
     {
       "id": 32,
       "name": "Middleton Vaughn",
       "department": "METROZ",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (903) 428-3498",
-      "emailaddress": "middletonvaughn@metroz.com"
+      "emailAddress": "middletonvaughn@metroz.com"
     },
     {
       "id": 33,
       "name": "Fischer Puckett",
       "department": "FIBRODYNE",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (950) 449-3169",
-      "emailaddress": "fischerpuckett@fibrodyne.com"
+      "emailAddress": "fischerpuckett@fibrodyne.com"
     },
     {
       "id": 34,
       "name": "Sheppard Ferrell",
       "department": "ACCUPRINT",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (867) 410-3141",
-      "emailaddress": "sheppardferrell@accuprint.com"
+      "emailAddress": "sheppardferrell@accuprint.com"
     },
     {
       "id": 35,
       "name": "Wilkerson Nunez",
       "department": "COMSTAR",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (857) 597-3723",
-      "emailaddress": "wilkersonnunez@comstar.com"
+      "emailAddress": "wilkersonnunez@comstar.com"
     },
     {
       "id": 36,
       "name": "Talley Santos",
       "department": "DECRATEX",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (973) 487-3998",
-      "emailaddress": "talleysantos@decratex.com"
+      "emailAddress": "talleysantos@decratex.com"
     },
     {
       "id": 37,
       "name": "Kelley Delgado",
       "department": "CUBICIDE",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (813) 518-2195",
-      "emailaddress": "kelleydelgado@cubicide.com"
+      "emailAddress": "kelleydelgado@cubicide.com"
     },
     {
       "id": 38,
       "name": "Herring Cain",
       "department": "GENMY",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (949) 592-2435",
-      "emailaddress": "herringcain@genmy.com"
+      "emailAddress": "herringcain@genmy.com"
     },
     {
       "id": 39,
       "name": "Brewer Gillespie",
       "department": "NORALEX",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (973) 435-3648",
-      "emailaddress": "brewergillespie@noralex.com"
+      "emailAddress": "brewergillespie@noralex.com"
     },
     {
       "id": 40,
       "name": "Oneil Oneill",
       "department": "CONFERIA",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (845) 572-3567",
-      "emailaddress": "oneiloneill@conferia.com"
+      "emailAddress": "oneiloneill@conferia.com"
     },
     {
       "id": 41,
       "name": "Concepcion Olson",
       "department": "SONGLINES",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (896) 462-3632",
-      "emailaddress": "concepcionolson@songlines.com"
+      "emailAddress": "concepcionolson@songlines.com"
     },
     {
       "id": 42,
       "name": "Quinn Ruiz",
       "department": "COWTOWN",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (835) 594-3267",
-      "emailaddress": "quinnruiz@cowtown.com"
+      "emailAddress": "quinnruiz@cowtown.com"
     },
     {
       "id": 43,
       "name": "Turner Holt",
       "department": "ORBOID",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (978) 527-2247",
-      "emailaddress": "turnerholt@orboid.com"
+      "emailAddress": "turnerholt@orboid.com"
     },
     {
       "id": 44,
       "name": "Alexandria Todd",
       "department": "TETAK",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (938) 563-2939",
-      "emailaddress": "alexandriatodd@tetak.com"
+      "emailAddress": "alexandriatodd@tetak.com"
     },
     {
       "id": 45,
       "name": "Elba England",
       "department": "EMOLTRA",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (989) 456-3581",
-      "emailaddress": "elbaengland@emoltra.com"
+      "emailAddress": "elbaengland@emoltra.com"
     },
     {
       "id": 46,
       "name": "Edith Armstrong",
       "department": "ASSISTIA",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (951) 410-2558",
-      "emailaddress": "editharmstrong@assistia.com"
+      "emailAddress": "editharmstrong@assistia.com"
     },
     {
       "id": 47,
       "name": "Audrey Baxter",
       "department": "SEALOUD",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (887) 440-2125",
-      "emailaddress": "audreybaxter@sealoud.com"
-    },
-    {
-      "id": 48,
-      "name": "Carrie Mcdaniel",
-      "department": "OPTICON",
-      "workshift": "DIURNO",
-      "phone": "+55 (941) 507-2269",
-      "emailaddress": "carriemcdaniel@opticon.com"
+      "emailAddress": "audreybaxter@sealoud.com"
     },
     {
       "id": 49,
       "name": "Kerri Hayes",
       "department": "TRIPSCH",
-      "workshift": "DIURNO",
+      "workShift": "DIURNO",
       "phone": "+55 (976) 498-3925",
-      "emailaddress": "kerrihayes@tripsch.com"
+      "emailAddress": "kerrihayes@tripsch.com"
+    },
+    {
+      "department": "teste",
+      "id": 50,
+      "name": "Gui lesionado",
+      "workShift": "teste",
+      "phone": "teste",
+      "emailAddress": "teste.teste@gmail.com"
+    },
+    {
+      "id": 51,
+      "name": "abc",
+      "department": "abc",
+      "workShift": "abc",
+      "phone": "abc",
+      "emailAddress": "abc@a.com"
+    },
+    {
+      "id": 52,
+      "name": "Testando 123",
+      "department": "aaa",
+      "workShift": "aaa",
+      "phone": "aaaaa",
+      "emailAddress": "alang.von@gmail.com"
     }
   ],
   "clockPunches": [
-
+    {
+      "workerId": 2,
+      "time": "2022-10-06T18:48:29.516Z",
+      "id": 1
+    },
+    {
+      "workerId": 1,
+      "time": "2022-10-09T18:48:47.880Z",
+      "id": 2
+    },
+    {
+      "workerId": 52,
+      "time": "2022-10-09T21:04:23.418Z",
+      "id": 3
+    },
+    {
+      "workerId": 2,
+      "time": "2022-10-09T21:43:52.706Z",
+      "id": 4
+    }
   ]
 }

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-3">
+      <app-operation-title [imageFrom]="titleIcon" text="Busca de Marcação"></app-operation-title>
+    </div>
+    <div class="w-100 card-funcionario mt-2 mb-2  d-flex flex-column align-items-center" style="text-align: center;">
+      <span class="my-5">{{clockPunch.time | date:'HH:mm - dd/MM/yyyy'}}</span>
+      <div>
+        <span>Marcação feita por</span><br>
+        <span class="cor-azul-escuro">{{clockPunch.worker.name}}</span>
+      </div>
+      <div class="my-5">
+        <span>Departamento</span><br>
+        <span class="cor-azul-escuro">
+          {{clockPunch.worker.department}}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

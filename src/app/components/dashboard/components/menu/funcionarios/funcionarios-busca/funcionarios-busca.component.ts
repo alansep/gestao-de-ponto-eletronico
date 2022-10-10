@@ -1,3 +1,5 @@
+import { FooterSectionMenu } from './../../../footer/domain/footer-section-menu';
+import { FooterSection } from './../../../footer/domain/footer-section';
 import { ApplicationRoutes } from 'src/app/shared-services/application-routes';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -13,6 +15,7 @@ import { FuncionariosService } from './../service/funcionarios.service';
 })
 export class FuncionariosBuscaComponent implements OnInit {
   public workers: Array<Worker> = [];
+  public titleIcon: FooterSectionMenu = FooterSectionMenu.WORKER;
 
   constructor(
     private service: FuncionariosService,

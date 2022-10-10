@@ -1,0 +1,41 @@
+<div *ngIf="!onReportMode">
+  <form #periodForm="ngForm" (ngSubmit)="generateReport()">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mt-3">
+          <app-operation-title [imageFrom]="titleIcon" text="Relatórios"></app-operation-title>
+        </div>
+        <div class="col-12">
+          <div class="mt-3 d-flex flex-column">
+            <span class="fw-bolder label-font-size">Data inicial</span>
+            <div class="mb-1"></div>
+            <input type="date" class="form-control input-with-label p-2" id="startDate" name="startDate"
+              [(ngModel)]="dates.startDate" required>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mt-3 d-flex flex-column">
+            <span class="fw-bolder label-font-size">Data final</span>
+            <div class="mb-1"></div>
+            <input type="date" class="form-control input-with-label p-2" id="finalDate" name="finalDate"
+              [(ngModel)]="dates.finalDate" required>
+          </div>
+        </div>
+        <div class="col-12 d-flex justify-content-center mt-4">
+          <button type="submit" class="btn btn-primary fundo-azul-com-baixa-saturacao"
+            [disabled]="periodForm.invalid">Buscar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div *ngIf="onReportMode" class="report-background">
+  <div *ngFor="let clockPunch of clockPunches">
+    <hr class="w-100" style="border-top: 2px dashed black">
+    <div class="d-flex flex-column align-items-center">
+      <span> <b>{{clockPunch.time | date:'dd/MM/yyyy - HH:mm'}}</b></span>
+      <span><b>{{clockPunch.worker.name | uppercase}}</b></span>
+      <span><b>p{{clockPunch.worker.department | uppercase}} </b></span>
+    </div>
+  </div>
+</div>

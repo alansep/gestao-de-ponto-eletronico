@@ -41,11 +41,9 @@ export class UsersService {
     let users: Array<User> = await this.userPromiseService.getUsers();
 
     return new Promise((resolve) => {
-      console.log(username);
 
       let filteredUsers = users.filter((user) => user.username === username);
 
-      console.log(filteredUsers, users);
 
       if (filteredUsers.length != 1) {
         resolve(false);

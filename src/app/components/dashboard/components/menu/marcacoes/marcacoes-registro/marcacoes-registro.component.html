@@ -1,5 +1,8 @@
 <div class="container">
   <div class="row">
+    <div class="col-12 mt-3">
+      <app-operation-title [imageFrom]="titleIcon" text="Registro de Marcação"></app-operation-title>
+    </div>
     <div class="col-12" [class.on-confirmation]="isOnConfirmation || isOnSuccessMessage">
       <br>
       <app-worker-search [workers]="workers" (onSelectWorker)="getWorker($event)"> </app-worker-search>

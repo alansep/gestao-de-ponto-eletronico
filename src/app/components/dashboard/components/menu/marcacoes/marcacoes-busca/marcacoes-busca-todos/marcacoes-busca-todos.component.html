@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-3">
+      <app-operation-title [imageFrom]="titleIcon" text="Busca de Marcação"></app-operation-title>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4" *ngFor="let clockPunch of clockPunches">
+      <div class="w-100 card-funcionario mt-2 mb-2 cor-azul-escuro" (click)="openClockPunch(clockPunch.id)">
+        {{clockPunch.time | date:'HH:mm'}} - {{clockPunch.worker.name}}
+      </div>
+    </div>
+  </div>
+</div>
