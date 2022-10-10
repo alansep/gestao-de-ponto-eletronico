@@ -1,6 +1,6 @@
 <div class="d-flex flex-column">
   <div>
-    <app-input-with-label label="Digite o nome do funcionario" (onTyping)="search($event)"></app-input-with-label>
+    <app-input-with-label label="Digite o nome do funcionário" (onTyping)="search($event)"></app-input-with-label>
   </div>
   <div class="mt-4 mb-3" style="background-color: black; height:1px; width: 100vw; margin-left: -12px;"></div>
   <div *ngFor="let worker of filteredWorkers">

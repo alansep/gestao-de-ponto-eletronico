@@ -21,6 +21,7 @@ import { MarcacoesBuscaTodosComponent } from './marcacoes/marcacoes-busca/marcac
 import { MarcacoesBuscaPorFuncionarioComponent } from './marcacoes/marcacoes-busca/marcacoes-busca-por-funcionario/marcacoes-busca-por-funcionario.component';
 import { MarcacoesBuscaDetailComponent } from './marcacoes/marcacoes-busca-detail/marcacoes-busca-detail.component';
 import { MarcacoesPorPeriodoComponent } from './relatorios/marcacoes-por-periodo/marcacoes-por-periodo.component';
+import { HorasTrabalhadasComponent } from './relatorios/horas-trabalhadas/horas-trabalhadas.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MarcacoesPorPeriodoComponent } from './relatorios/marcacoes-por-periodo
     MarcacoesBuscaPorFuncionarioComponent,
     MarcacoesBuscaDetailComponent,
     MarcacoesPorPeriodoComponent,
+    HorasTrabalhadasComponent,
   ],
   imports: [
     CommonModule,

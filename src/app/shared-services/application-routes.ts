@@ -1,3 +1,4 @@
+import { HorasTrabalhadasComponent } from './../components/dashboard/components/menu/relatorios/horas-trabalhadas/horas-trabalhadas.component';
 import { MarcacoesPorPeriodoComponent } from './../components/dashboard/components/menu/relatorios/marcacoes-por-periodo/marcacoes-por-periodo.component';
 import { MarcacoesBuscaDetailComponent } from './../components/dashboard/components/menu/marcacoes/marcacoes-busca-detail/marcacoes-busca-detail.component';
 import { MarcacoesBuscaPorFuncionarioComponent } from './../components/dashboard/components/menu/marcacoes/marcacoes-busca/marcacoes-busca-por-funcionario/marcacoes-busca-por-funcionario.component';
@@ -34,6 +35,7 @@ export class ApplicationRoutes {
   public static TODOS = 'todos';
   public static DETALHADO = 'detalhado';
   public static PERIODO = 'periodo';
+  public static HORAS = 'horas';
 
   public static routes: Routes = [
     {
@@ -82,6 +84,7 @@ export class ApplicationRoutes {
         },
         { path: ApplicationRoutes.RELATORIOS, component: RelatoriosComponent },
         { path: ApplicationRoutes.RELATORIOS + '/' + ApplicationRoutes.PERIODO,  component: MarcacoesPorPeriodoComponent },
+        { path: ApplicationRoutes.RELATORIOS + '/' + ApplicationRoutes.HORAS,  component: HorasTrabalhadasComponent },
 
         { path: '', redirectTo: ApplicationRoutes.INICIO, pathMatch: 'full' },
       ],

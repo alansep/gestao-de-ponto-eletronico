@@ -25,7 +25,11 @@ export class RelatoriosComponent implements OnInit {
     ]);
   }
 
-  public navigateTo(): void {
-
+  public navigateToHoursCounterReportPage(): void {
+    this.router.navigate([
+      ApplicationRoutes.DASHBOARD,
+      ApplicationRoutes.RELATORIOS,
+      ApplicationRoutes.HORAS,
+    ]);
   }
 }

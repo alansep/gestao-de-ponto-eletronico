@@ -50,6 +50,25 @@ export class MarcacoesService {
     });
   }
 
+  public async calculateHours(worker: Worker): Promise<number> {
+    let foundWorker: WorkerWithClockPunch = await firstValueFrom(
+      this.getClockPunchesBy(worker)
+    );
+    let milliseconds: number = 0;
+    let canCalculate: boolean = false;
+    let startDate: Date = new Date();
+    for (let i = 0; i < foundWorker.clockPunches.length; i++) {
+      if (canCalculate) {
+        milliseconds += new Date(foundWorker.clockPunches[i].time).getTime() - startDate.getTime();
+      } else {
+        startDate = new Date(foundWorker.clockPunches[i].time);
+        canCalculate = true;
+      }
+    }
+
+    return new Promise(resolve => resolve(milliseconds));
+  }
+
   private generateClockPunch(selectedWorker: Worker): Clock {
     return new Clock(undefined, selectedWorker.id, new Date());
   }
